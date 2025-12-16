@@ -1,0 +1,86 @@
+﻿@{
+    // Set the browser tab title
+    ViewData["Title"] = "Our Services - Tech Bricks";
+}
+
+<div class="container py-5">
+
+    <section class="text-center mb-5">
+        <h1 class="display-4 font-weight-bold text-primary">Our Expertise: Technology That Delivers Results</h1>
+        <p class="lead">We transform complex business challenges into resilient, high-performance software solutions using modern cloud-native architectures.</p>
+    </section>
+
+    <hr class="my-5" />
+
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center order-md-2">
+                <i class="fas fa-code fa-9x text-muted mb-3 service-icon-large"></i>
+            </div>
+            <div class="col-md-7 order-md-1">
+                <h2>Custom Software & Backend Engineering</h2>
+                <p>We build the robust core of your digital platform—scalable APIs, microservices, and enterprise applications that handle high-throughput and complex data processing.</p>
+                <h4 class="text-primary mt-4">Core Technologies:</h4>
+                <p>
+                    <span class="badge bg-secondary">.NET Core / ASP.NET MVC</span>
+                    <span class="badge bg-secondary">Web API / RESTful Architecture</span>
+                    <span class="badge bg-secondary">Microservices</span>
+                    <span class="badge bg-secondary">Entity Framework / LINQ</span>
+                    <span class="badge bg-secondary">Redis Cache</span>
+                </p>
+                @Html.ActionLink("Start a Software Project", "Contact", "Home", null, new { @class = "btn btn-outline-primary mt-3" })
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-5" />
+
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center">
+                <i class="fas fa-cloud-upload-alt fa-9x text-success mb-3 service-icon-large"></i>
+            </div>
+            <div class="col-md-7">
+                <h2>Cloud Migration & DevOps Automation</h2>
+                <p>Accelerate your development cycle and ensure application stability through automated pipelines and modern cloud infrastructure management.</p>
+                <h4 class="text-primary mt-4">Key Capabilities:</h4>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> **Cloud Platforms:** Expertise in Azure and AWS environments.</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> **Containerization:** Leveraging Docker and Kubernetes for scalable deployments.</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> **CI/CD:** Implementing continuous integration and delivery with Azure DevOps and GitLab.</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> **Monitoring:** Enhancing visibility using Grafana and SonarQube.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-5" />
+
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center order-md-2">
+                <i class="fas fa-sitemap fa-9x text-info mb-3 service-icon-large"></i>
+            </div>
+            <div class="col-md-7 order-md-1">
+                <h2>Technical Consulting & Design Architecture</h2>
+                <p>We provide strategic guidance and architecturally sound foundations to build future-proof software, focusing on security, performance, and maintainability.</p>
+                <h4 class="text-primary mt-4">Architectural Focus:</h4>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-info me-2"></i> **Design Patterns:** Applying SOLID Principles and design patterns like Factory and Singleton.</li>
+                    <li><i class="fas fa-check-circle text-info me-2"></i> **Optimization:** Performance benchmarking, API refactoring, and query optimization.</li>
+                    <li><i class="fas fa-check-circle text-info me-2"></i> **Database Expertise:** Utilizing Microsoft SQL Server, PostgreSQL, and MySQL.</li>
+                </ul>
+                @Html.ActionLink("Consultation Request", "Contact", "Home", null, new { @class = "btn btn-outline-info mt-3" })
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-secondary text-white text-center rounded mt-5">
+        <div class="container">
+            <h3>Ready to scale your technology?</h3>
+            <p>Let's discuss how our expertise can drive your business forward.</p>
+            @Html.ActionLink("Get a Free Consultation", "Contact", "Home", null, new { @class = "btn btn-light btn-lg mt-3" })
+        </div>
+    </section>
+
+</div>

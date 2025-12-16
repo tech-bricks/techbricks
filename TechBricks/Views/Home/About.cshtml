@@ -1,0 +1,86 @@
+﻿@{
+    // Set the browser tab title
+    ViewData["Title"] = "About Tech Bricks";
+}
+
+<div class="container py-5">
+
+    <section class="text-center mb-5">
+        <h1 class="display-4 font-weight-bold text-primary">Driven by Innovation. Defined by Results.</h1>
+        <p class="lead">Tech Bricks is founded on a decade of expertise in building and scaling enterprise software.</p>
+    </section>
+
+    <hr class="my-5" />
+
+    <section id="mission-vision" class="mb-5">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="p-4 border rounded shadow-sm h-100">
+                    <h3 class="text-info"><i class="fas fa-bullseye me-2"></i> Our Mission</h3>
+                    <p>To transform complex business requirements into secure, maintainable, and highly efficient software solutions, leveraging the power of .NET Core and cloud technologies.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="p-4 border rounded shadow-sm h-100">
+                    <h3 class="text-info"><i class="fas fa-eye me-2"></i> Our Vision</h3>
+                    <p>To be the trusted, high-value partner for companies seeking excellence in modern software architecture, specializing in distributed systems and performance optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantage" class="py-5 bg-light rounded shadow-sm mb-5">
+        <h2 class="text-center mb-4">The Advantage of Experience</h2>
+        <div class="row justify-content-center">
+
+            <div class="col-md-4 text-center p-3">
+                <i class="fas fa-hourglass-half fa-4x text-primary mb-3"></i>
+                <h4 class="text-primary">Over 12 Years of Expertise</h4>
+                <p>We bring over 12 years of hands-on experience in architecting and developing scalable enterprise applications.</p>
+            </div>
+
+            <div class="col-md-4 text-center p-3">
+                <i class="fas fa-sitemap fa-4x text-success mb-3"></i>
+                <h4 class="text-success">SDLC & Leadership</h4>
+                <p>Adept at leading full Software Development Lifecycle (SDLC) initiatives and mentoring development teams to ensure technical excellence.</p>
+            </div>
+
+            <div class="col-md-4 text-center p-3">
+                <i class="fas fa-cogs fa-4x text-danger mb-3"></i>
+                <h4 class="text-danger">Cloud-Native Focus</h4>
+                <p>Proven expertise in building distributed systems, implementing DevOps pipelines, and delivering high-performance solutions across Azure and AWS.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="values" class="mb-5">
+        <h2 class="text-center mb-5">Our Core Values</h2>
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <h5 class="text-info">Integrity</h5>
+                <p class="small">Maintaining transparent communication and honest partnership throughout the project lifecycle.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h5 class="text-info">Innovation</h5>
+                <p class="small">Committing to continuous learning and leveraging cutting-edge tools like .NET Core 8 and Kubernetes.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h5 class="text-info">Quality</h5>
+                <p class="small">Delivering robust, well-documented endpoints and enforcing best practices, including SOLID principles.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <h5 class="text-info">Client-Focus</h5>
+                <p class="small">Translating business needs into secure, maintainable technical solutions that deliver measurable business impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-primary text-white text-center rounded mt-5">
+        <div class="container">
+            <h3>Partner with an experienced leader in .NET development.</h3>
+            <p>Ready to leverage 12+ years of enterprise software excellence?</p>
+            @Html.ActionLink("Request a Consultation", "Contact", "Home", null, new { @class = "btn btn-light btn-lg mt-3" })
+        </div>
+    </section>
+
+</div>
