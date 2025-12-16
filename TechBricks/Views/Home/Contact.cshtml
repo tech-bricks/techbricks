@@ -1,0 +1,70 @@
+﻿@model TechBricks.Models.ContactFormModel
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="text-center mb-4">Get in Touch</h1>
+            <p class="text-center lead mb-5">
+                Have a project idea or need technical advice? Fill out the form below, and we'll get back to you within one business day.
+            </p>
+
+            @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "contact-form p-4 shadow-lg rounded bg-white" }))
+            {
+                // CRITICAL: This generates the hidden Anti-Forgery Token
+                @Html.AntiForgeryToken()
+
+                // OPTIONAL: Uncomment to show model-level errors
+                @* @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" }) *@
+
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.Name, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "John Doe" })
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger small" })
+                </div>
+
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.Email, new { @class = "form-label" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email", placeholder = "name@example.com" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger small" })
+                </div>
+
+                <div class="form-group mb-3">
+                    @Html.LabelFor(m => m.Subject, new { @class = "form-label" })
+                    @Html.DropDownListFor(m => m.Subject, new SelectList(new List<SelectListItem>
+                    {
+                        new SelectListItem { Value = "", Text = "-- Select One --" },
+                                new SelectListItem { Value = "Software Development", Text = "Custom Software Development" },
+                                new SelectListItem { Value = "IT Consulting", Text = "IT Consulting & Strategy" },
+                                new SelectListItem { Value = "Cloud Services", Text = "Cloud Migration/Services" },
+                                new SelectListItem { Value = "Other", Text = "General Inquiry / Other" }
+                                }, "Value", "Text"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger small" })
+            </div>
+
+            <div class="form-group mb-4">
+                @Html.LabelFor(m => m.Message, new { @class = "form-label" })
+                @Html.TextAreaFor(m => m.Message, new { @class = "form-control", rows = "5", placeholder = "Tell us about your project..." })
+                @Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger small" })
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+
+            @if (ViewBag.MessageSent != null && ViewBag.MessageSent)
+                {
+                    <div class="alert alert-success mt-3">
+                        Thank you for contacting us! We have received your message and will be in touch shortly.
+                    </div>
+                }
+            }
+
+            <div class="text-center mt-5">
+                <hr>
+                <h3 class="mb-3">Or Connect Directly</h3>
+                <p>
+                    <i class="fas fa-phone-alt text-primary me-2"></i> **Phone:** +44 7796067732<br>
+                    <i class="fas fa-envelope text-primary me-2"></i> **Email:** info@tech-bricks.com
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

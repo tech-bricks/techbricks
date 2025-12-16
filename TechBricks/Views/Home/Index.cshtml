@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Home page";
+}
+
+<main>
+    <section id="hero" class="jumbotron text-center text-white d-flex align-items-center" style="background-image: url('/images/placeholder-background.jpg');">
+        <div class="container my-5">
+            @* <h1 class="display-3 font-weight-bold">Tech Bricks</h1>
+            <p class="lead">Innovating Solutions for Tomorrow's Technology.</p> *@
+            @Html.ActionLink("Explore Our Services", "Services", "Home", null, new { @class = "btn btn-primary btn-lg mt-3 smooth-scroll", style = "margin-top: 250px !important;" })
+        </div>
+    </section>
+
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Core Expertise</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm border-0 text-center service-card">
+                        <div class="card-body">
+                            <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Custom Software Development</h5>
+                            <p class="card-text">Building scalable, high-performance applications tailored specifically to your business processes using .NET Core.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm border-0 text-center service-card">
+                        <div class="card-body">
+                            <i class="fas fa-cloud fa-3x text-success mb-3"></i>
+                            <h5 class="card-title">Cloud & DevOps Migration</h5>
+                            <p class="card-text">Migrate and manage your infrastructure on Azure, AWS, or GCP for maximum efficiency and uptime.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm border-0 text-center service-card">
+                        <div class="card-body">
+                            <i class="fas fa-shield-alt fa-3x text-danger mb-3"></i>
+                            <h5 class="card-title">Cybersecurity & Consulting</h5>
+                            <p class="card-text">Protecting your data assets with robust security solutions and strategic IT advisory services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-callout" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h2>Driven by Innovation. Defined by Results.</h2>
+                    <p>We are a passionate team of .NET experts committed to delivering measurable business value through cutting-edge technology. Our focus is always on quality and long-term partnership.</p>
+                    <a href="About" class="btn btn-outline-primary mt-3">Learn More About Us</a>
+                </div>
+                @* <div class="col-md-5 text-center">
+                    <img src="placeholder-team.png" alt="Our Team" class="img-fluid rounded-circle shadow-lg" style="max-width: 250px;">
+                </div> *@
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h3>Ready to start your next project?</h3>
+            <p>We're here to help you achieve your digital goals.</p>
+            @Html.ActionLink("Get a Free Consultation", "Contact", "Home", null, new { @class = "btn btn-light btn-lg mt-3" })
+        </div>
+    </section>
+</main>

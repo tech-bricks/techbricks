@@ -1,0 +1,77 @@
+/* Custom CSS for SynergyTech IT Solutions */
+
+/* Define Color Scheme (replace these with your brand colors) */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --accent-color: #28a745; /* Green */
+    --text-color: #343a40;
+    --light-bg: #f8f9fa;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+}
+
+/* Override Bootstrap Primary Color */
+.btn-primary, .bg-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* Header/Navigation */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* 1. HERO SECTION STYLES */
+#hero {
+    min-height: 70vh; /* Takes up 70% of the viewport height */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* Dark overlay for better text readability */
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+}
+
+    #hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 0.5rem;
+        animation: fadeInDown 1s ease-out; /* Simple entry animation */
+    }
+
+/* 2. SERVICES CARD STYLES */
+.service-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+    .service-card:hover {
+        transform: translateY(-5px); /* Lift the card on hover */
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+    }
+
+    .service-card i {
+        color: var(--primary-color);
+    }
+
+/* Footer Styles */
+.footer {
+    padding: 20px 0;
+    background-color: var(--light-bg);
+}
+
+/* Animation Keyframe for Hero */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
