@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,20 +10,37 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Tech Bricks</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo.png" alt="" style="height:48px;" class="mr-2" />
+                    <span class="font-weight-bold">TechBricks</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link text-dark" })</li>
-                        <li class="nav-item">@Html.ActionLink("Services", "Services", "Home", null, new { @class = "nav-link text-dark" })</li>
-                        <li class="nav-item">@Html.ActionLink("About Us", "About", "Home", null, new { @class = "nav-link text-dark" })</li>
-                        <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link text-dark" })</li>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-center">
+                        <li class="nav-item">
+                            @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Services", "Services", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Solutions", "Solution", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("About Us", "About", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        @* <li class="nav-item">
+                            @Html.ActionLink("Case Studies", "CaseStudies", "Home", null, new { @class = "nav-link" })
+                        </li> *@
                     </ul>
+                    <div class="ms-auto d-flex align-items-center">
+                        <a class="btn btn-outline-primary mx-2" asp-area="" asp-controller="Home" action="@Html.ActionLink("Contact Us", "Contact", "Home", null, new { @class = "nav-link" })</a>
+                        <a class="btn btn-primary" href="/Home/Contact">Get A Quote</a>
+                    </div>
                 </div>
             </div>
         </nav>

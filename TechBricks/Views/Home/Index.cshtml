@@ -3,69 +3,194 @@
 }
 
 <main>
-    <section id="hero" class="jumbotron text-center text-white d-flex align-items-center" style="background-image: url('/images/placeholder-background.jpg');">
-        <div class="container my-5">
-            @* <h1 class="display-3 font-weight-bold">Tech Bricks</h1>
-            <p class="lead">Innovating Solutions for Tomorrow's Technology.</p> *@
-            @Html.ActionLink("Explore Our Services", "Services", "Home", null, new { @class = "btn btn-primary btn-lg mt-3 smooth-scroll", style = "margin-top: 250px !important;" })
-        </div>
-    </section>
-
-    <section id="services" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Our Core Expertise</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow-sm border-0 text-center service-card">
-                        <div class="card-body">
-                            <i class="fas fa-code fa-3x text-primary mb-3"></i>
-                            <h5 class="card-title">Custom Software Development</h5>
-                            <p class="card-text">Building scalable, high-performance applications tailored specifically to your business processes using .NET Core.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow-sm border-0 text-center service-card">
-                        <div class="card-body">
-                            <i class="fas fa-cloud fa-3x text-success mb-3"></i>
-                            <h5 class="card-title">Cloud & DevOps Migration</h5>
-                            <p class="card-text">Migrate and manage your infrastructure on Azure, AWS, or GCP for maximum efficiency and uptime.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow-sm border-0 text-center service-card">
-                        <div class="card-body">
-                            <i class="fas fa-shield-alt fa-3x text-danger mb-3"></i>
-                            <h5 class="card-title">Cybersecurity & Consulting</h5>
-                            <p class="card-text">Protecting your data assets with robust security solutions and strategic IT advisory services.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about-callout" class="py-5 bg-white">
-        <div class="container">
+    <!-- Hero Section -->
+   @*  <section class="jumbotron jumbotron-fluid text-white" style="background: url('/images/hero-bg.jpg') center/cover no-repeat;">
+        <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-md-7">
-                    <h2>Driven by Innovation. Defined by Results.</h2>
-                    <p>We are a passionate team of .NET experts committed to delivering measurable business value through cutting-edge technology. Our focus is always on quality and long-term partnership.</p>
-                    <a href="About" class="btn btn-outline-primary mt-3">Learn More About Us</a>
+                    <h1 class="display-4 font-weight-bold">Building Innovative Tech Solutions for Your Business</h1>
+                    <p class="lead">Empowering your growth through cutting-edge technology and expert consulting.</p>
+                    <a href="#" class="btn btn-primary btn-lg mr-2">Get Started</a>
+                    <a href="#" class="btn btn-light btn-lg">Learn More</a>
                 </div>
-                @* <div class="col-md-5 text-center">
-                    <img src="placeholder-team.png" alt="Our Team" class="img-fluid rounded-circle shadow-lg" style="max-width: 250px;">
-                </div> *@
+                <div class="col-md-5 d-none d-md-block">
+                    <img src="~/images/hero-people.jpg" alt="Tech Bricks Team" class="img-fluid rounded" /> *@
+                    <section class="hero-section position-relative">
+                      @*   <div class="hero-overlay"></div>
+                        <div class="container hero-content text-white">
+                            <div class="row">
+                                <div class="col-md-7 col-lg-6">
+                                    <h1 class="display-4 font-weight-bold mb-3">
+                                        Building Innovative Tech<br />
+                                        <span class="font-weight-normal">Solutions</span> for Your Business
+                                    </h1>
+                                    <p class="lead mb-4">
+                                        Empowering your growth through cutting-edge technology<br />
+                                        and expert consulting.
+                                    </p>
+                                    <div class="d-flex">
+                                        <a href="#" class="btn btn-primary btn-lg mr-3">Get Started</a>
+                                        <a href="#" class="btn btn-light btn-lg">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> *@
+                    </section>
+            @*     </div>
+            </div>
+        </div>
+    </section> *@
+
+    <!-- Top Services -->
+    <section class="bg-white py-4">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <i class="fas fa-briefcase fa-2x text-primary mb-2"></i>
+                    <img src="~/images/IT Consulting.png" />
+                    <h6 class="font-weight-bold">IT Consulting</h6>
+                    <p class="mb-0 small">Strategic IT solutions to elevate your business forward.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <i class="fas fa-digital-tachograph fa-2x text-primary mb-2"></i>
+                    <img src="~/images/Digital.png" />
+                    <h6 class="font-weight-bold">Digital Transformation</h6>
+                    <p class="mb-0 small">Modernizing your business with the latest technologies.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <i class="fas fa-cloud fa-2x text-primary mb-2"></i>
+                    <img src="~/images/Cloud.png" />
+                    <h6 class="font-weight-bold">Cloud Services</h6>
+                    <p class="mb-0 small">Scalable and secure cloud solutions for your enterprise.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-primary text-white text-center">
+    <!-- Our Services -->
+    <section class="py-5 bg-light">
         <div class="container">
-            <h3>Ready to start your next project?</h3>
-            <p>We're here to help you achieve your digital goals.</p>
-            @Html.ActionLink("Get a Free Consultation", "Contact", "Home", null, new { @class = "btn btn-light btn-lg mt-3" })
+            <h2 class="text-center mb-4">Our Services</h2>
+            <p class="text-center text-muted mb-5">Expert Solutions Tailored to Your Needs</p>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="fas fa-shield-alt fa-2x text-primary mb-3"></i>
+                            <img src="~/images/Cyber.png" />
+                            <h6 class="font-weight-bold">Cysecversity</h6>
+                            <p class="small">Protecting your business from digital threats.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="fas fa-chart-line fa-2x text-primary mb-3"></i>
+                            <img src="~/images/Data.png" />
+                            <h6 class="font-weight-bold">Data Analytics</h6>
+                            <p class="small">Leverage insights to drive smart decisions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="fas fa-laptop-code fa-2x text-primary mb-3"></i>
+                            <img src="~/images/Softwaredev.png" />
+                            <h6 class="font-weight-bold">Software Development</h6>
+                            <p class="small">Custom applications to meet your unique needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="fas fa-headset fa-2x text-primary mb-3"></i>
+                            <img src="~/images/IT support.png" />
+                            <h6 class="font-weight-bold">IT Support</h6>
+                            <p class="small">Reliable and responsive IT support services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h3 class="text-center mb-4">Why Choose Tech Bricks?</h3>
+            <div class="row text-center mb-4">
+                <div class="col-md-4">
+                    <h6 class="font-weight-bold">Experienced Team</h6>
+                    <p class="small">A team of industry experts dedicated to your success.</p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="font-weight-bold">Proven Results</h6>
+                    <p class="small">Delivering measurable outcomes for our clients.</p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="font-weight-bold">Innovative Solutions</h6>
+                    <p class="small">Cutting-edge technologies tailored for your business.</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="#" class="btn btn-primary btn-lg">Get a Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h4 class="text-center mb-4">Client Success Stories</h4>
+            <p class="text-center text-muted mb-5">See how we've helped businesses like yours thrive.</p>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body d-flex">
+                            @* <img src="~/images/testimonial1.jpg" alt="Jane Smith" class="rounded-circle mr-3" style="width:60px;height:60px;"> *@
+                            <div>
+                                <h6 class="mb-0 font-weight-bold">Jane Smith</h6>
+                                <small class="text-muted">CEO, Innovatech</small>
+                                <p class="mt-2 mb-0 small">Tech Bricks transformed our IT infrastructure, boosting our efficiency and security.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body d-flex">
+                           @*  <img src="~/images/testimonial2.jpg" alt="Michael Lee" class="rounded-circle mr-3" style="width:60px;height:60px;"> *@
+                            <div>
+                                <h6 class="mb-0 font-weight-bold">Michael Lee</h6>
+                                <small class="text-muted">CTO, Global Solutions</small>
+                                <p class="mt-2 mb-0 small">Outstanding service and expertise. Highly recommend Tech Bricks!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="mb-2 mb-md-0">
+                <span class="text-muted small">Quick Links: </span>
+                <a href="#" class="text-muted small mx-2">About Us</a> |
+                <a href="#" class="text-muted small mx-2">Services</a> |
+                <a href="#" class="text-muted small mx-2">Case Studies</a> |
+                <a href="#" class="text-muted small mx-2">Contact</a>
+            </div>
+            <div>
+                <span class="text-muted small mr-2">Follow Us</span>
+                <a href="#" class="text-muted mx-1"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-muted mx-1"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-muted mx-1"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
 </main>

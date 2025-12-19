@@ -34,6 +34,12 @@ namespace TechBricks.Controllers
             return View();
         }
 
+        public IActionResult Solution()
+        {
+            // MVC looks for a view at: /Views/Home/About.cshtml
+            return View();
+        }
+
 
         [HttpGet]
         public IActionResult Contact()

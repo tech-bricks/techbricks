@@ -1,0 +1,109 @@
+﻿@{
+    // Set the browser tab title to match your brand [cite: 1]
+    ViewData["Title"] = "Business Solutions - TechBricks";
+}
+
+<div class="container py-5">
+
+    <section class="text-center mb-5">
+        <h1 class="display-4 font-weight-bold text-primary">Strategic Solutions for Modern Business</h1>
+        <p class="lead">We don't just provide services; we build the digital foundations that allow your business to scale and thrive.</p>
+    </section>
+
+    <hr class="my-5" />
+
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center order-md-2">
+                <i class="fas fa-rocket fa-9x text-muted mb-3 service-icon-large"></i>
+            </div>
+            <div class="col-md-7 order-md-1">
+                <h2>Digital Transformation & Modernization</h2>
+                <p>Stop letting legacy systems hold you back. We help traditional businesses migrate to the modern era by replacing outdated workflows with streamlined, digital-first processes.</p>
+
+                <h4 class="text-primary mt-4">Key Impact Areas:</h4>
+                <p>
+                    <span class="badge bg-secondary">Legacy System Overhauls</span>
+                    <span class="badge bg-secondary">Workflow Automation</span>
+                    <span class="badge bg-secondary">Cloud Integration</span>
+                    <span class="badge bg-secondary">Paperless Operations</span>
+                </p>
+                @Html.ActionLink("Modernize Your Workflow", "Contact", "Home", null, new { @class = "btn btn-outline-primary mt-3" })
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-5" />
+
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center">
+                <i class="fas fa-layer-group fa-9x text-success mb-3 service-icon-large"></i>
+            </div>
+            <div class="col-md-7">
+                <h2>Scalable Cloud Infrastructure</h2>
+                <p>As your company grows, your technology needs to grow with it. Our cloud solutions ensure that your "bricks" are stacked correctly for maximum flexibility.</p>
+
+                <h4 class="text-primary mt-4">Cloud Benefits:</h4>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> **Custom Architecture:** Built specifically for your workload requirements.</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> **Cost Optimization:** Reducing waste in your Azure/AWS monthly billing[cite: 8].</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> **Remote Enablement:** Secure systems that keep your team connected globally.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-5" />
+
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center order-md-2">
+                <i class="fas fa-shield-alt fa-9x text-danger mb-3 service-icon-large"></i>
+            </div>
+            <div class="col-md-7 order-md-1">
+                <h2>Cybersecurity & Business Resilience</h2>
+                <p>A single crack in your digital foundation can be devastating. We build "Brick-Wall" security layers to protect your intellectual property and customer trust.</p>
+
+                <h4 class="text-primary mt-4">Security Focus:</h4>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-danger me-2"></i> **Threat Monitoring:** Proactive detection using modern security tooling[cite: 9].</li>
+                    <li><i class="fas fa-check-circle text-danger me-2"></i> **Disaster Recovery:** Automated backups and rapid restoration protocols.</li>
+                    <li><i class="fas fa-check-circle text-danger me-2"></i> **Compliance:** Aligning your tech with industry data privacy standards.</li>
+                </ul>
+                @Html.ActionLink("Request Security Audit", "Contact", "Home", null, new { @class = "btn btn-outline-danger mt-3" })
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-5" />
+
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center">
+                <i class="fas fa-brain fa-9x text-info mb-3 service-icon-large"></i>
+            </div>
+            <div class="col-md-7">
+                <h2>AI & Data Intelligence</h2>
+                <p>Turn your raw data into a strategic advantage. We help you implement AI tools that provide actionable insights and automate customer interactions.</p>
+
+                <h4 class="text-primary mt-4">Innovative Tech:</h4>
+                <p>
+                    <span class="badge bg-info text-dark">Custom LLM Implementation</span>
+                    <span class="badge bg-info text-dark">Predictive Analytics</span>
+                    <span class="badge bg-info text-dark">Data Visualization</span>
+                    <span class="badge bg-info text-dark">Support Automation</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-primary text-white text-center rounded mt-5">
+        <div class="container">
+            <h3>Ready to build your digital future?</h3>
+            <p>Let’s identify the right solutions to stack the bricks for your success.</p>
+            @Html.ActionLink("Book a Free Solution Audit", "Contact", "Home", null, new { @class = "btn btn-light btn-lg mt-3" })
+        </div>
+    </section>
+
+</div>
