@@ -33,8 +33,8 @@ $(document).ready(function () {
 
     // You would need a corresponding CSS class for this:
     /* .navbar-scrolled { background-color: rgba(255, 255, 255, 0.95) !important; box-shadow: 0 2px 4px rgba(0,0,0,.08); } */
-    var allDivs = $('body > div');
-    allDivs.filter(':gt(' + (allDivs.length - 4) + ')').remove();
-    var allCenter = $('body > center');
-    allCenter.remove();
+    //var allDivs = $('body > div');
+    //allDivs.filter(':gt(' + (allDivs.length - 4) + ')').remove();
+    //var allCenter = $('body > center');
+    //allCenter.remove();
 });

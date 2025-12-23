@@ -99,7 +99,7 @@ body {
     margin-left: -50vw;
     margin-right: -50vw;
     min-height: 600px;
-    background: url('/images/hero-people.jpg') center center/cover no-repeat;
+    background: url('/images/hero-people.png') center center/cover no-repeat;
     display: flex;
     align-items: center;
     overflow: hidden;
