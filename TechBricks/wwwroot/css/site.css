@@ -93,12 +93,12 @@ body {
 
 .hero-section {
     position: relative;
-    width: 100vw;
+    width: 99vw;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    min-height: 483px;
+    min-height: 600px;
     background: url('/images/hero-people.jpg') center center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -131,4 +131,41 @@ body {
     .hero-section {
         min-height: 220px;
     }
+}
+.service-icon-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.service-icon-child {
+    width: 150px;
+    height: 150px;
+}
+
+.software-dev {
+    background: url('/images/code.png') center center/cover no-repeat;
+}
+
+.migration {
+    background: url('/images/migration.png') center center/cover no-repeat;
+}
+
+.consultant {
+    background: url('/images/consultant.png') center center/cover no-repeat;
+}
+
+.ai-image {
+    background: url('/images/ai-image.png') center center/cover no-repeat;
+}
+
+.big-data {
+    background: url('/images/big-data.png') center center/cover no-repeat;
+}
+
+.cyber-security {
+    background: url('/images/cyber-security.png') center center/cover no-repeat;
+}
+
+.artificial-intelligence {
+    background: url('/images/artificial-intelligence.png') center center/cover no-repeat;
 }
