@@ -25,12 +25,18 @@
                     <span class="badge bg-secondary">.NET Core / ASP.NET MVC</span>
                     <span class="badge bg-secondary">Web API / RESTful Architecture</span>
                     <span class="badge bg-secondary">Microservices</span>
-                    <span class="badge bg-secondary">Entity Framework / LINQ</span>
-                    <span class="badge bg-secondary">Caching</span>
+                    <span class="badge bg-secondary">Entity Framework / LINQ / Dapper</span>
+                    <span class="badge bg-secondary">Caching / Redis</span>
                      <span class="badge bg-secondary">Azure</span>
                     <span class="badge bg-secondary">AWS</span>
                     <span class="badge bg-secondary">Angular / React</span>
                     <span class="badge bg-secondary">iOS / Android</span>
+                    <span class="badge bg-secondary">Elastic Search</span>
+                    <span class="badge bg-secondary">Docker / Kubernetes(k8s)</span>
+                    <span class="badge bg-secondary">MongoDB / PostgreSQL / MySql / MSSQL</span>
+                    <span class="badge bg-secondary">Messaging Queue / RabbitMQ / Kafka / signalR / gRPC</span>
+                    <span class="badge bg-secondary">Hangfire / Quartz</span>
+                    <span class="badge bg-secondary">Testing / xUnit / nUnit / Playwright</span>
                 </p>
                 @Html.ActionLink("Start a Software Project", "Contact", "Home", null, new { @class = "btn btn-outline-primary mt-3" })
             </div>
@@ -49,10 +55,10 @@
                 <p>Accelerate your development cycle and ensure application stability through automated pipelines and modern cloud infrastructure management.</p>
                 <h4 class="text-primary mt-4">Key Capabilities:</h4>
                 <ul class="list-unstyled">
-                    <li><i class="fas fa-check-circle text-success me-2"></i> **Cloud Platforms:** Expertise in Azure and AWS environments.</li>
-                    <li><i class="fas fa-check-circle text-success me-2"></i> **Containerization:** Leveraging Docker and Kubernetes for scalable deployments.</li>
-                    <li><i class="fas fa-check-circle text-success me-2"></i> **CI/CD:** Implementing continuous integration and delivery with Azure DevOps and GitLab.</li>
-                    <li><i class="fas fa-check-circle text-success me-2"></i> **Monitoring:** Enhancing visibility using Grafana and SonarQube.</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> <span class="highlight">Cloud Platforms</span> Expertise in Azure and AWS environments.</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> <span class="highlight">Containerization</span> Leveraging Docker and Kubernetes for scalable deployments.</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> <span class="highlight">CI/CD</span> Implementing continuous integration and delivery with Azure DevOps and GitLab.</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> <span class="highlight">Monitoring</span> Enhancing visibility using Grafana and SonarQube.</li>
                 </ul>
             </div>
         </div>
@@ -70,11 +76,77 @@
                 <p>We provide strategic guidance and architecturally sound foundations to build future-proof software, focusing on security, performance, and maintainability.</p>
                 <h4 class="text-primary mt-4">Architectural Focus:</h4>
                 <ul class="list-unstyled">
-                    <li><i class="fas fa-check-circle text-info me-2"></i> **Design Patterns:** Applying SOLID Principles and design patterns like Factory and Singleton.</li>
-                    <li><i class="fas fa-check-circle text-info me-2"></i> **Optimization:** Performance benchmarking, API refactoring, and query optimization.</li>
-                    <li><i class="fas fa-check-circle text-info me-2"></i> **Database Expertise:** Utilizing Microsoft SQL Server, PostgreSQL, and MySQL.</li>
+                    <li><i class="fas fa-check-circle text-info me-2"></i> <span class="highlight">Design Patterns</span> Applying SOLID Principles and design patterns like Factory and Singleton.</li>
+                    <li><i class="fas fa-check-circle text-info me-2"></i> <span class="highlight">Optimization</span> Performance benchmarking, API refactoring, and query optimization.</li>
+                    <li><i class="fas fa-check-circle text-info me-2"></i> <span class="highlight">Database Expertise</span> Utilizing Microsoft SQL Server, PostgreSQL, and MySQL.</li>
                 </ul>
                 @Html.ActionLink("Consultation Request", "Contact", "Home", null, new { @class = "btn btn-outline-info mt-3" })
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-5" />
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center service-icon-parent">
+                <div class="service-icon-child big-data"></div>
+            </div>
+            <div class="col-md-7">
+                <h2>Scalable Cloud Infrastructure</h2>
+                <p>As your company grows, your technology needs to grow with it. Our cloud solutions ensure that your "bricks" are stacked correctly for maximum flexibility.</p>
+
+                <h4 class="text-primary mt-4">Cloud Benefits:</h4>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> <span class="highlight">Custom Architecture</span> Built specifically for your workload requirements.</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> <span class="highlight">Cost Optimization</span> Reducing waste in your Azure/AWS monthly billing.</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> <span class="highlight">Remote Enablement</span> Secure systems that keep your team connected globally.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-5" />
+
+    
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center order-md-2 service-icon-parent">
+                <div class="service-icon-child ai-image"></div>
+            </div>
+            <div class="col-md-7 order-md-1">
+                <h2>Digital Transformation & Modernization</h2>
+                <p>Stop letting legacy systems hold you back. We help traditional businesses migrate to the modern era by replacing outdated workflows with streamlined, digital-first processes.</p>
+
+                <h4 class="text-primary mt-4">Key Impact Areas:</h4>
+                <p>
+                    <span class="badge bg-secondary">Legacy System Overhauls</span>
+                    <span class="badge bg-secondary">Workflow Automation</span>
+                    <span class="badge bg-secondary">Cloud Integration</span>
+                    <span class="badge bg-secondary">Paperless Operations</span>
+                </p>
+                @Html.ActionLink("Modernize Your Workflow", "Contact", "Home", null, new { @class = "btn btn-outline-primary mt-3" })
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-5" />
+
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 text-center service-icon-parent">
+                <div class="service-icon-child artificial-intelligence"></div>
+            </div>
+            <div class="col-md-7">
+                <h2>AI & Data Intelligence</h2>
+                <p>Turn your raw data into a strategic advantage. We help you implement AI tools that provide actionable insights and automate customer interactions.</p>
+
+                <h4 class="text-primary mt-4">Innovative Tech:</h4>
+                <p>
+                    <span class="badge bg-secondary">Custom LLM Implementation</span>
+                    <span class="badge bg-secondary">Predictive Analytics</span>
+                    <span class="badge bg-secondary">Data Visualization</span>
+                    <span class="badge bg-secondary">Support Automation</span>
+                </p>
             </div>
         </div>
     </section>

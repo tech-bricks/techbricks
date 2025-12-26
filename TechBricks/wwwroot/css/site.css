@@ -169,3 +169,7 @@ body {
 .artificial-intelligence {
     background: url('/images/artificial-intelligence.png') center center/cover no-repeat;
 }
+
+.highlight{
+    font-weight:bold;
+}
