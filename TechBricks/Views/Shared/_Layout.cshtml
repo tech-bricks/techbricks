@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="hBcdWbaHH4fql5x2nAGnLbCWIiMjNPFDOUubicTXVGA" />
+    <meta name="google-site-verification" content="mv2lJKCluR5xeD2-QZ01sr4lMwitBMwgKjq9px0UGpY" />
     <title>TechBricks - Innovating Solutions</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -23,20 +23,20 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item">
-                            @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Home", "index", "home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Services", "Services", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Services", "services", "home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("About Us", "About", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("About Us", "about", "home", null, new { @class = "nav-link" })
                         </li>
                         <li class="nav-item">
-                            @Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Contact", "contact", "home", null, new { @class = "nav-link" })
                         </li>
                     </ul>
                     <div class="ms-auto d-flex align-items-center">
-                        <a class="btn btn-primary" href="/Home/Contact">Get A Quote</a>
+                        <a class="btn btn-primary" href="/home/contact">Get A Quote</a>
                     </div>
                 </div>
             </div>
@@ -48,8 +48,42 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - TechBricks@*  - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                &copy; 2025 - TechBricks @* - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
+            </div>
+
+            <div class="d-flex align-items-center">
+                <span class="me-2">Follow us:</span>
+
+                <a class="text-reset me-2" href="https://www.linkedin.com/company/tech-bricks-2025" target="_blank" rel="noopener noreferrer" aria-label="TechBricks on LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                        <title>LinkedIn</title>
+                        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.98h4.96V24H0V8.98zM8.98 8.98h4.76v2.04h.07c.66-1.25 2.27-2.57 4.67-2.57 4.99 0 5.91 3.28 5.91 7.54V24H19.8v-7.6c0-1.81-.03-4.15-2.53-4.15-2.53 0-2.92 1.98-2.92 4.02V24H8.98V8.98z"/>
+                    </svg>
+                </a>
+
+                <a class="text-reset me-2" href="https://www.facebook.com/profile.php?id=61586116010818" target="_blank" rel="noopener noreferrer" aria-label="TechBricks on Facebook">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                        <title>Facebook</title>
+                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H8.9v-2.89h1.54V9.41c0-1.52.9-2.36 2.28-2.36.66 0 1.35.12 1.35.12v1.49h-.76c-.75 0-.98.47-.98.95v1.15h1.67l-.27 2.89h-1.4v6.99C18.34 21.12 22 16.99 22 12z"/>
+                    </svg>
+                </a>
+
+                @* <a class="text-reset me-2" href="https://twitter.com/techbricks" target="_blank" rel="noopener noreferrer" aria-label="TechBricks on Twitter">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                        <title>Twitter</title>
+                        <path d="M22.46 6c-.77.35-1.6.58-2.46.69.89-.53 1.57-1.37 1.89-2.37-.83.49-1.75.85-2.72 1.05C17.92 4.6 16.72 4 15.4 4c-2.3 0-4.17 1.86-4.17 4.15 0 .33.04.66.11.97C7.69 9 4.07 7.13 1.64 4.34c-.36.62-.57 1.33-.57 2.09 0 1.44.73 2.71 1.84 3.46-.68-.02-1.32-.21-1.88-.52v.05c0 2.02 1.43 3.7 3.33 4.08-.35.1-.73.15-1.12.15-.27 0-.53-.03-.78-.08.53 1.66 2.06 2.87 3.87 2.9-1.42 1.12-3.2 1.79-5.14 1.79-.33 0-.65-.02-.97-.06 1.83 1.18 4.01 1.86 6.35 1.86 7.62 0 11.8-6.3 11.8-11.76 0-.18 0-.36-.01-.54.81-.58 1.5-1.3 2.05-2.12-.73.32-1.51.53-2.32.62.84-.5 1.48-1.28 1.79-2.21z"/>
+                    </svg>
+                </a>
+
+                <a class="text-reset" href="https://www.instagram.com/techbricks" target="_blank" rel="noopener noreferrer" aria-label="TechBricks on Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                        <title>Instagram</title>
+                        <path d="M12 2.16c3.2 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.4.6.22 1.03.48 1.48.93.45.45.71.88.93 1.48.16.46.34 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.4 2.43-.22.6-.48 1.03-.93 1.48-.45.45-.88.71-1.48.93-.46.16-1.26.34-2.43.4-1.27.06-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.43-.4-.6-.22-1.03-.48-1.48-.93-.45-.45-.71-.88-.93-1.48-.16-.46-.34-1.26-.4-2.43C2.17 15.58 2.16 15.2 2.16 12s.012-3.584.07-4.85c.056-1.17.24-1.97.4-2.43.22-.6.48-1.03.93-1.48.45-.45.88-.71 1.48-.93.46-.16 1.26-.34 2.43-.4C8.416 2.172 8.8 2.16 12 2.16zm0 1.8c-3.16 0-3.524.012-4.767.069-1.06.05-1.637.22-2.02.367-.51.19-.876.42-1.26.805-.385.386-.616.75-.805 1.26-.147.383-.317.96-.367 2.02-.057 1.243-.069 1.607-.069 4.767s.012 3.524.069 4.767c.05 1.06.22 1.637.367 2.02.19.51.42.876.805 1.26.386.385.75.616 1.26.805.383.147.96.317 2.02.367 1.243.057 1.607.069 4.767.069s3.524-.012 4.767-.069c1.06-.05 1.637-.22 2.02-.367.51-.19.876-.42 1.26-.805.385-.386.616-.75.805-1.26.147-.383.317-.96.367-2.02.057-1.243.069-1.607.069-4.767s-.012-3.524-.069-4.767c-.05-1.06-.22-1.637-.367-2.02-.19-.51-.42-.876-.805-1.26-.386-.385-.75-.616-1.26-.805-.383-.147-.96-.317-2.02-.367C15.524 3.972 15.16 3.96 12 3.96zM12 7.44a4.56 4.56 0 100 9.12 4.56 4.56 0 000-9.12zm0 1.8a2.76 2.76 0 110 5.52 2.76 2.76 0 010-5.52zm5.64-2.97a1.07 1.07 0 11-2.14 0 1.07 1.07 0 012.14 0z"/>
+                    </svg>
+                </a> *@
+            </div>
         </div>
     </footer>
 
