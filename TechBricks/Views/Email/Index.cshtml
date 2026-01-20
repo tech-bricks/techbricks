@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Bulk Email - Upload";
+}
+
+<h2>Bulk Email Upload</h2>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <div>@err.ErrorMessage</div>
+        }
+    </div>
+}
+
+@if (ViewBag.Message != null)
+{       
+    <div class="alert alert-info">@ViewBag.Message</div>
+}
+
+@if (ViewBag.SentCount != null)
+{
+    <div class="alert alert-success">
+        <strong>Sent:</strong> @ViewBag.SentCount
+        @if (ViewBag.TotalRecipients != null)
+        {
+            <span class="ms-3"><strong>Total:</strong> @ViewBag.TotalRecipients</span>
+            <span class="ms-3"><strong>Failed:</strong> @ViewBag.FailedCount</span>
+        }
+    </div>
+}
+
+<form asp-action="Index" asp-controller="Email" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">CSV / Excel file (must contain Email and Name columns)</label>
+        <input type="file" name="uploadFile" class="form-control" accept=".csv,.xls,.xlsx" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Upload & Send</button>
+</form>

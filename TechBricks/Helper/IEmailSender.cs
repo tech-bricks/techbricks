@@ -5,8 +5,9 @@
         Task SendEmailAsync(string toEmail, string subject, string message);
     }
 
+    // Updated to return number of successfully sent emails
     public interface IBulkEmailSender
     {
-        Task SendBulkZohoEmailsAsync(List<string> recipientEmails, string subject, string bodyHtml);
+        Task<int> SendBulkZohoEmailsAsync(List<TechBricks.Models.EmailRecipient> recipients, string subject, string bodyHtmlTemplate, string? attachmentPath = null);
     }
 }

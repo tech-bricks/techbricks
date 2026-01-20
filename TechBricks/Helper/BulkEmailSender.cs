@@ -1,64 +1,82 @@
 ﻿using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
+using TechBricks.Models;
+using System.IO;
 
 namespace TechBricks.Helper
 {
     public class BulkEmailSender : IBulkEmailSender
     {
-        public async Task SendBulkZohoEmailsAsync(List<string> recipientEmails, string subject, string bodyHtml)
+        public async Task<int> SendBulkZohoEmailsAsync(List<EmailRecipient> recipients, string subject, string bodyHtmlTemplate, string? attachmentPath = null)
         {
-            // Zoho SMTP Configuration
+            int successCount = 0;
+
+            // Zoho SMTP Configuration - please keep secrets out of code in production (use configuration/secret store)
             string smtpHost = "smtp.zoho.com";
             int smtpPort = 465;
             string zohoUsername = "info@tech-bricks.com";
             string zohoPassword = "mzgubTCfd8cg"; // Use an App Password for security
 
-            using (var client = new SmtpClient())
+            using var client = new SmtpClient();
+            try
             {
-                try
+                await client.ConnectAsync(smtpHost, smtpPort, SecureSocketOptions.SslOnConnect);
+                await client.AuthenticateAsync(zohoUsername, zohoPassword);
+
+                foreach (var recipient in recipients)
                 {
-                    // 1. Connect and Authenticate ONCE
-                    await client.ConnectAsync(smtpHost, smtpPort, SecureSocketOptions.SslOnConnect);
-                    await client.AuthenticateAsync(zohoUsername, zohoPassword);
-
-                    foreach (var email in recipientEmails)
+                    try
                     {
-                        try
+                        var message = new MimeMessage();
+                        message.From.Add(new MailboxAddress("Tech Bricks", zohoUsername));
+                        message.To.Add(new MailboxAddress(recipient.Name, recipient.Email));
+                        message.Subject = subject ?? "";
+
+                        // Replace common placeholder formats for name in the template.
+                        string personalizedHtml = bodyHtmlTemplate ?? "";
+                        if (!string.IsNullOrWhiteSpace(recipient.Name))
                         {
-                            var message = new MimeMessage();
-                            message.From.Add(new MailboxAddress("Tech Bricks", zohoUsername));
-                            message.To.Add(new MailboxAddress(null, email));
-                            message.Subject = subject;
-
-                            var bodyBuilder = new BodyBuilder { HtmlBody = bodyHtml };
-                            message.Body = bodyBuilder.ToMessageBody();
-
-                            // 2. Send within the existing connection
-                            await client.SendAsync(message);
-                            Console.WriteLine($"Email sent to {email}");
-
-                            // 3. Optional: Small delay to stay within Zoho's rate limits
-                            // await Task.Delay(200); 
+                            personalizedHtml = personalizedHtml
+                                .Replace("{{Name}}", recipient.Name, StringComparison.OrdinalIgnoreCase)
+                                .Replace("{Name}", recipient.Name, StringComparison.OrdinalIgnoreCase)
+                                .Replace("%%Name%%", recipient.Name, StringComparison.OrdinalIgnoreCase)
+                                .Replace("%%=v(@Name)=%%", recipient.Name, StringComparison.OrdinalIgnoreCase);
                         }
-                        catch (Exception ex)
+
+                        var bodyBuilder = new BodyBuilder { HtmlBody = personalizedHtml };
+
+                        if (!string.IsNullOrEmpty(attachmentPath) && File.Exists(attachmentPath))
                         {
-                            Console.WriteLine($"Failed to send to {email}: {ex.Message}");
-                            // Continue to next recipient even if one fails
+                            bodyBuilder.Attachments.Add(attachmentPath);
                         }
+
+                        message.Body = bodyBuilder.ToMessageBody();
+
+                        await client.SendAsync(message);
+
+                        // increment only on successful send
+                        successCount++;
+                    }
+                    catch (Exception ex)
+                    {
+                        // log or handle per-recipient failure as needed
+                        Console.WriteLine($"Failed to send to {recipient.Email}: {ex.Message}");
+                        // continue sending to other recipients
                     }
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"SMTP Connection Error: {ex.Message}");
-                }
-                finally
-                {
-                    // 4. Disconnect once after all emails are processed
-                    if (client.IsConnected)
-                        await client.DisconnectAsync(true);
-                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"SMTP Connection Error: {ex.Message}");
+            }
+            finally
+            {
+                if (client.IsConnected)
+                    await client.DisconnectAsync(true);
+            }
+
+            return successCount;
         }
     }
 }
