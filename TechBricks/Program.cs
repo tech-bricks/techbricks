@@ -1,6 +1,7 @@
 using TechBricks.Helper;
 using TechBricks.Models;
 using TechBricks.Background;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,16 +19,25 @@ else
     builder.Services.AddControllersWithViews();
 }
 
+// Authentication: cookie auth with a login path
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login";
+        options.ExpireTimeSpan = TimeSpan.FromHours(8);
+        options.SlidingExpiration = true;
+    });
+
 // existing registrations
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.AddTransient<IBulkEmailSender, BulkEmailSender>();
 
-// background queue + hosted service (assumes these files already exist)
+// background queue + hosted service
 builder.Services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
 builder.Services.AddHostedService<QueuedHostedService>();
 
-// Register job store (in-memory). Replace with persistent store later if needed.
+// job store
 builder.Services.AddSingleton<IEmailJobStore, EmailJobStore>();
 
 var app = builder.Build();
@@ -47,6 +57,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Enable authentication middleware
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

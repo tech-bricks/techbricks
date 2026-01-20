@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    var returnUrl = ViewData["ReturnUrl"] as string;
+}
+
+<h2>Login</h2>
+
+<form asp-action="Login" asp-controller="Account" method="post">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" name="returnUrl" value="@returnUrl" />
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input name="username" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input name="password" type="password" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger mt-3">
+        @foreach (var err in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <div>@err.ErrorMessage</div>
+        }
+    </div>
+}

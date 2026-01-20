@@ -8,9 +8,11 @@ using System.IO;
 using Microsoft.Extensions.Logging;
 using TechBricks.Background;
 using System.Threading;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TechBricks.Controllers
 {
+    [Authorize] // restrict all actions in this controller to authenticated users
     public class EmailController : Controller
     {
         private readonly IBulkEmailSender _emailSender;
