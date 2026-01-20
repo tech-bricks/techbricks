@@ -22,6 +22,7 @@ builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Emai
 
 // 2. Register the IEmailSender service
 builder.Services.AddTransient<IEmailSender, EmailSender>();
+builder.Services.AddTransient<IBulkEmailSender, BulkEmailSender>();
 
 var app = builder.Build();
 
