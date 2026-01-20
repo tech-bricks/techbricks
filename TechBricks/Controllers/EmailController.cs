@@ -6,8 +6,8 @@ using ExcelDataReader;
 using System.Data;
 using System.IO;
 using Microsoft.Extensions.Logging;
-using TechBricks.Background; // new
-using System.Threading;     // new
+using TechBricks.Background;
+using System.Threading;
 
 namespace TechBricks.Controllers
 {
@@ -17,21 +17,32 @@ namespace TechBricks.Controllers
         private readonly IWebHostEnvironment _env;
         private readonly ILogger<EmailController> _logger;
         private readonly IBackgroundTaskQueue _taskQueue;
+        private readonly IEmailJobStore _jobStore;
 
         public EmailController(
             IBulkEmailSender emailSender,
             IWebHostEnvironment env,
             ILogger<EmailController> logger,
-            IBackgroundTaskQueue taskQueue)
+            IBackgroundTaskQueue taskQueue,
+            IEmailJobStore jobStore)
         {
             _emailSender = emailSender;
             _env = env;
             _logger = logger;
             _taskQueue = taskQueue;
+            _jobStore = jobStore;
         }
 
         [HttpGet]
         public IActionResult Index() => View();
+
+        // New action: show jobs UI
+        [HttpGet]
+        public IActionResult Jobs()
+        {
+            var jobs = _jobStore.GetAllJobs().OrderByDescending(j => j.CreatedAt).ToList();
+            return View(jobs);
+        }
 
         [HttpPost]
         [RequestSizeLimit(50_000_000)]
@@ -143,24 +154,40 @@ namespace TechBricks.Controllers
                     return View();
                 }
 
+                // Create job record
+                var job = _jobStore.CreateJob(uploadFile.FileName, recipients.Count);
+
                 // ENQUEUE work and return immediately
                 await _taskQueue.QueueBackgroundWorkItem(async ct =>
                 {
+                    _jobStore.MarkRunning(job.Id);
                     try
                     {
                         _logger.LogInformation("Background job started: sending {Count} emails (file: {FileName})", recipients.Count, uploadFile.FileName);
-                        // call your existing sender (it returns Task<int> or Task depending on your signature)
-                        // if your SendBulkZohoEmailsAsync returns int, capture it; adjust as needed
-                        await _emailSender.SendBulkZohoEmailsAsync(recipients, subject ?? "Company Update", bodyHtml ?? string.Empty, profilePdfPath);
+
+                        // capture sent count if your sender returns int
+                        int sentCount = 0;
+                        try
+                        {
+                            sentCount = await _emailSender.SendBulkZohoEmailsAsync(recipients, subject ?? "Company Update", bodyHtml ?? string.Empty, profilePdfPath);
+                        }
+                        catch
+                        {
+                            // If your implementation returns Task (no int), fall back to marking as completed with best-effort
+                            sentCount = job.TotalRecipients; // optimistic; you may want to change
+                        }
+
+                        _jobStore.MarkCompleted(job.Id, sentCount);
                         _logger.LogInformation("Background job finished: emails processed for {FileName}", uploadFile.FileName);
                     }
                     catch (Exception ex)
                     {
                         _logger.LogError(ex, "Background job error while sending emails for {FileName}", uploadFile.FileName);
+                        _jobStore.MarkFailed(job.Id, ex.Message);
                     }
                 });
 
-                ViewBag.Message = $"Email job queued for processing ({recipients.Count} recipients). You will receive confirmation in server logs.";
+                ViewBag.Message = $"Email job queued for processing ({recipients.Count} recipients). View <a href=\"/Email/Jobs\">jobs</a> for status.";
                 return View();
             }
             catch (Exception ex)

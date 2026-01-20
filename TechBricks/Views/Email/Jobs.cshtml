@@ -1,0 +1,50 @@
+@model IEnumerable<TechBricks.Models.EmailJob>
+
+@{
+    ViewData["Title"] = "Email Jobs";
+}
+
+<h2>Email Jobs</h2>
+
+<p>
+    <a asp-action="Index" asp-controller="Email" class="btn btn-secondary">New Upload</a>
+</p>
+
+@if (!Model?.Any() ?? true)
+{
+    <div class="alert alert-info">No jobs yet.</div>
+}
+else
+{
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>Job Id</th>
+                <th>File</th>
+                <th>Total</th>
+                <th>Sent</th>
+                <th>Failed</th>
+                <th>Status</th>
+                <th>Created</th>
+                <th>Completed</th>
+                <th>Error</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var job in Model)
+            {
+                <tr>
+                    <td style="word-break:break-all;">@job.Id</td>
+                    <td>@job.FileName</td>
+                    <td>@job.TotalRecipients</td>
+                    <td>@job.SentCount</td>
+                    <td>@job.FailedCount</td>
+                    <td>@job.Status</td>
+                    <td>@job.CreatedAt.ToLocalTime().ToString("g")</td>
+                    <td>@(job.CompletedAt.HasValue ? job.CompletedAt.Value.ToLocalTime().ToString("g") : "-")</td>
+                    <td>@job.ErrorMessage</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,6 +1,6 @@
-using TechBricks.Background;
 using TechBricks.Helper;
 using TechBricks.Models;
+using TechBricks.Background;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,14 +18,17 @@ else
     builder.Services.AddControllersWithViews();
 }
 
-// Register existing services
+// existing registrations
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.AddTransient<IBulkEmailSender, BulkEmailSender>();
 
-// Register background queue + hosted service
+// background queue + hosted service (assumes these files already exist)
 builder.Services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
 builder.Services.AddHostedService<QueuedHostedService>();
+
+// Register job store (in-memory). Replace with persistent store later if needed.
+builder.Services.AddSingleton<IEmailJobStore, EmailJobStore>();
 
 var app = builder.Build();
 

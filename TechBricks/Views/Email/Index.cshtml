@@ -4,6 +4,10 @@
 
 <h2>Bulk Email Upload</h2>
 
+<p>
+    <a asp-action="Jobs" class="btn btn-outline-primary btn-sm">View Jobs</a>
+</p>
+
 @if (!ViewData.ModelState.IsValid)
 {
     <div class="alert alert-danger">
@@ -15,20 +19,8 @@
 }
 
 @if (ViewBag.Message != null)
-{       
-    <div class="alert alert-info">@ViewBag.Message</div>
-}
-
-@if (ViewBag.SentCount != null)
 {
-    <div class="alert alert-success">
-        <strong>Sent:</strong> @ViewBag.SentCount
-        @if (ViewBag.TotalRecipients != null)
-        {
-            <span class="ms-3"><strong>Total:</strong> @ViewBag.TotalRecipients</span>
-            <span class="ms-3"><strong>Failed:</strong> @ViewBag.FailedCount</span>
-        }
-    </div>
+    <div class="alert alert-success">@Html.Raw(ViewBag.Message)</div>
 }
 
 <form asp-action="Index" asp-controller="Email" method="post" enctype="multipart/form-data">
@@ -37,5 +29,5 @@
         <input type="file" name="uploadFile" class="form-control" accept=".csv,.xls,.xlsx" required />
     </div>
 
-    <button type="submit" class="btn btn-primary">Upload & Send</button>
+    <button type="submit" class="btn btn-primary">Upload & Queue</button>
 </form>
