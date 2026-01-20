@@ -6,6 +6,8 @@ using ExcelDataReader;
 using System.Data;
 using System.IO;
 using Microsoft.Extensions.Logging;
+using TechBricks.Background; // new
+using System.Threading;     // new
 
 namespace TechBricks.Controllers
 {
@@ -14,22 +16,25 @@ namespace TechBricks.Controllers
         private readonly IBulkEmailSender _emailSender;
         private readonly IWebHostEnvironment _env;
         private readonly ILogger<EmailController> _logger;
+        private readonly IBackgroundTaskQueue _taskQueue;
 
-        public EmailController(IBulkEmailSender emailSender, IWebHostEnvironment env, ILogger<EmailController> logger)
+        public EmailController(
+            IBulkEmailSender emailSender,
+            IWebHostEnvironment env,
+            ILogger<EmailController> logger,
+            IBackgroundTaskQueue taskQueue)
         {
             _emailSender = emailSender;
             _env = env;
             _logger = logger;
+            _taskQueue = taskQueue;
         }
 
         [HttpGet]
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public IActionResult Index() => View();
 
         [HttpPost]
-        [RequestSizeLimit(50_000_000)] // allow larger uploads if needed
+        [RequestSizeLimit(50_000_000)]
         public async Task<IActionResult> Index(IFormFile uploadFile)
         {
             if (uploadFile == null || uploadFile.Length == 0)
@@ -44,7 +49,6 @@ namespace TechBricks.Controllers
                 string bodyHtml = string.Empty;
                 var recipients = new List<EmailRecipient>();
 
-                // Read HTML template from wwwroot/files/htmlcontent.html
                 var wwwroot = _env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
                 var htmlTemplatePath = Path.Combine(wwwroot, "files", "htmlcontent.html");
 
@@ -58,7 +62,6 @@ namespace TechBricks.Controllers
                     return View();
                 }
 
-                // Determine file type by extension (simple check)
                 var ext = Path.GetExtension(uploadFile.FileName).ToLowerInvariant();
 
                 if (ext == ".csv")
@@ -71,12 +74,9 @@ namespace TechBricks.Controllers
                         return View();
                     }
 
-                    // simple CSV header parsing - expects columns like Email,Name (case-insensitive)
                     var headers = headerLine.Split(',').Select(h => h.Trim().Trim('"')).ToArray();
                     int emailIdx = Array.FindIndex(headers, h => h.Equals("email", StringComparison.OrdinalIgnoreCase));
                     int nameIdx = Array.FindIndex(headers, h => h.Equals("name", StringComparison.OrdinalIgnoreCase));
-
-                    // fallback: if no explicit Name column, try FirstName / FullName
                     if (nameIdx < 0)
                         nameIdx = Array.FindIndex(headers, h => h.Equals("firstname", StringComparison.OrdinalIgnoreCase) || h.Equals("fullname", StringComparison.OrdinalIgnoreCase));
 
@@ -96,12 +96,10 @@ namespace TechBricks.Controllers
                 }
                 else if (ext == ".xls" || ext == ".xlsx")
                 {
-                    // ExcelDataReader requires registration of the code pages provider
                     System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
                     using var stream = uploadFile.OpenReadStream();
                     using var reader = ExcelReaderFactory.CreateReader(stream);
 
-                    // If you rely on AsDataSet(), ensure ExcelDataReader.DataSet NuGet package is installed
                     var conf = new ExcelDataSetConfiguration
                     {
                         ConfigureDataTable = _ => new ExcelDataTableConfiguration
@@ -111,22 +109,7 @@ namespace TechBricks.Controllers
                     };
                     var result = reader.AsDataSet(conf);
 
-                    if (result.Tables.Count == 0)
-                    {
-                        ModelState.AddModelError("", "Excel file contains no sheets.");
-                        return View();
-                    }
-
                     var table = result.Tables[0];
-
-                    if (table.Rows.Count == 0)
-                    {
-                        ModelState.AddModelError("", "Excel sheet is empty.");
-                        return View();
-                    }
-
-                    // When UseHeaderRow=true, the header is not part of Rows; read by column name if possible
-                    // Fallback to first row detection if needed
                     var headerRow = table.Columns.Cast<DataColumn>().Select(c => c.ColumnName?.Trim() ?? "").ToArray();
                     int emailIdx = Array.FindIndex(headerRow, h => h.Equals("email", StringComparison.OrdinalIgnoreCase));
                     int nameIdx = Array.FindIndex(headerRow, h => h.Equals("name", StringComparison.OrdinalIgnoreCase));
@@ -153,7 +136,6 @@ namespace TechBricks.Controllers
                     return View();
                 }
 
-                // Path to company profile PDF inside wwwroot/files
                 var profilePdfPath = Path.Combine(_env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"), "files", "CompanyProfile.pdf");
                 if (!System.IO.File.Exists(profilePdfPath))
                 {
@@ -161,15 +143,28 @@ namespace TechBricks.Controllers
                     return View();
                 }
 
-                // Send emails (this runs the SMTP send which may take time)
-                await _emailSender.SendBulkZohoEmailsAsync(recipients, subject ?? "Company Update", bodyHtml ?? string.Empty, profilePdfPath);
+                // ENQUEUE work and return immediately
+                await _taskQueue.QueueBackgroundWorkItem(async ct =>
+                {
+                    try
+                    {
+                        _logger.LogInformation("Background job started: sending {Count} emails (file: {FileName})", recipients.Count, uploadFile.FileName);
+                        // call your existing sender (it returns Task<int> or Task depending on your signature)
+                        // if your SendBulkZohoEmailsAsync returns int, capture it; adjust as needed
+                        await _emailSender.SendBulkZohoEmailsAsync(recipients, subject ?? "Company Update", bodyHtml ?? string.Empty, profilePdfPath);
+                        _logger.LogInformation("Background job finished: emails processed for {FileName}", uploadFile.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "Background job error while sending emails for {FileName}", uploadFile.FileName);
+                    }
+                });
 
-                ViewBag.Message = $"Processed {recipients.Count} recipients. Emails are being sent.";
+                ViewBag.Message = $"Email job queued for processing ({recipients.Count} recipients). You will receive confirmation in server logs.";
                 return View();
             }
             catch (Exception ex)
             {
-                // Log full exception details for debugging
                 _logger.LogError(ex, "Error processing bulk email upload (file: {FileName})", uploadFile?.FileName);
                 ModelState.AddModelError("", "An unexpected error occurred while processing your request. Check server logs for details.");
                 return View();

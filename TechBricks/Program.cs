@@ -1,3 +1,4 @@
+using TechBricks.Background;
 using TechBricks.Helper;
 using TechBricks.Models;
 
@@ -17,25 +18,24 @@ else
     builder.Services.AddControllersWithViews();
 }
 
-// 1. Register EmailSettings configuration
+// Register existing services
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
-
-// 2. Register the IEmailSender service
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.AddTransient<IBulkEmailSender, BulkEmailSender>();
 
+// Register background queue + hosted service
+builder.Services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
+builder.Services.AddHostedService<QueuedHostedService>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    // Show developer exception page to see full exception details in browser during development
     app.UseDeveloperExceptionPage();
 }
 else
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
