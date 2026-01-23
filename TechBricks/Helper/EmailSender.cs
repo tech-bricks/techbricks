@@ -1,6 +1,6 @@
-﻿using System.Net;
+﻿using Microsoft.Extensions.Options;
+using System.Net;
 using System.Net.Mail;
-using Microsoft.Extensions.Options;
 using TechBricks.Models;
 
 namespace TechBricks.Helper
