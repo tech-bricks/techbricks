@@ -9,8 +9,14 @@ $(document).ready(function () {
         // Get the target ID from the data-target attribute
         // If data-target is missing, it falls back to lowercase button text
         var targetId = $(this).data('target') || $(this).text().trim().toLowerCase();
-        if (targetId === 'get started') {
+        if (targetId === 'get started' || targetId === 'start your project' || targetId === 'discuss your project') {
             targetId = 'contact';
+        }
+        if (targetId === '360 tours') {
+            window.location = '/360tour';
+        }
+        if (targetId === 'tech-bricksit solutions') {
+            window.location = '/home';
         }
         var $targetElement = $('#' + targetId);
 

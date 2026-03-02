@@ -14,6 +14,7 @@ namespace TechBricks.Controllers
             _emailSender = emailSender;
         }
 
+        [Route("home")]
         public IActionResult Index()
         {
             // MVC looks for a view at: /Views/Home/Index.cshtml
@@ -22,29 +23,11 @@ namespace TechBricks.Controllers
             return View();
         }
 
-        public IActionResult About()
+        [Route("360tour")]
+        public IActionResult VirtualTours()
         {
             // MVC looks for a view at: /Views/Home/About.cshtml
             return View();
-        }
-
-        public IActionResult Services()
-        {
-            // MVC looks for a view at: /Views/Home/About.cshtml
-            return View();
-        }
-
-        public IActionResult Solution()
-        {
-            // MVC looks for a view at: /Views/Home/About.cshtml
-            return View();
-        }
-
-
-        [HttpGet]
-        public IActionResult Contact()
-        {
-            return View(new ContactFormModel());
         }
 
         // POST: Handles the form submission
