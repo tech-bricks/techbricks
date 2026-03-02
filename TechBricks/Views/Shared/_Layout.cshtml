@@ -1,106 +1,324 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="mv2lJKCluR5xeD2-QZ01sr4lMwitBMwgKjq9px0UGpY" />
-    <title>TechBricks - Innovating Solutions</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#000000">
+	<meta name="description" content="A product of emergent.sh">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&amp;display=swap" rel="stylesheet">
+	<title>Tech-Bricks</title>
+	@* <script type="text/javascript" crossorigin="anonymous" async="" src="https://us-assets.i.posthog.com/static/array.js"></script> *@
+	@* <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script> *@
+	@* <script defer="" src="/static/js/bundle.js"></script> *@
+	<link href="~/css/site.css" rel="stylesheet" />
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand d-flex align-items-center" asp-area="" href="/Home/Index">
-                    <img src="~/images/logo.png" alt="" style="height:48px;" class="mr-2" />
-                    <span class="font-weight-bold">TechBricks</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav align-items-center">
-                        <li class="nav-item">
-                            @Html.ActionLink("Home", "index", "home", null, new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Services", "services", "home", null, new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("About Us", "about", "home", null, new { @class = "nav-link" })
-                        </li>
-                        <li class="nav-item">
-                            @Html.ActionLink("Contact", "contact", "home", null, new { @class = "nav-link" })
-                        </li>
-                    </ul>
-                    <div class="ms-auto d-flex align-items-center">
-                        @if (User?.Identity?.IsAuthenticated == true)
-                        {
-                            <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
-                                <button type="submit" class="btn btn-outline-secondary btn-sm me-2">Logout (@User.Identity.Name)</button>
-                            </form>
-                        }
-                        else
-                        {
-                            <a class="btn btn-outline-primary btn-sm me-2" asp-controller="Account" asp-action="Login">Login</a>
-                        }
+	<div id="root">
+		<div class="App" x-file-name="App" x-line-number="8" x-component="div" x-id="App_8" x-dynamic="false">
+			<div class="min-h-screen" x-file-name="Home" x-line-number="12" x-component="div" x-id="Home_12" x-dynamic="false">
+				<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm" x-file-name="Header" x-line-number="34" x-component="header" x-id="Header_34" x-dynamic="false">
+					<div class="container mx-auto px-4 lg:px-8 max-w-7xl" x-file-name="Header" x-line-number="41" x-component="div" x-id="Header_41" x-dynamic="false">
+						<div class="flex items-center justify-between h-20" x-file-name="Header" x-line-number="42" x-component="div" x-id="Header_42" x-dynamic="false">
+							<button class="flex items-center space-x-3 group cursor-pointer" x-file-name="Header" x-line-number="44" x-component="button" x-id="Header_44" x-dynamic="false">
+								<div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300" x-file-name="Header" x-line-number="48" x-component="div" x-id="Header_48" x-dynamic="false"><span class="text-white font-bold text-xl" x-file-name="Header" x-line-number="49" x-component="span" x-id="Header_49" x-dynamic="false">TB</span></div>
+								<div class="flex flex-col" x-file-name="Header" x-line-number="51" x-component="div" x-id="Header_51" x-dynamic="false"><span class="text-2xl font-bold text-gray-900 leading-none" x-file-name="Header" x-line-number="52" x-component="span" x-id="Header_52" x-dynamic="false">Tech-Bricks</span><span class="text-xs text-blue-600 font-medium" x-file-name="Header" x-line-number="55" x-component="span" x-id="Header_55" x-dynamic="false">IT Solutions</span></div>
+							</button>
+							<nav class="hidden lg:flex items-center space-x-2"
+								 x-file-name="Header"
+								 x-line-number="62"
+								 x-component="nav"
+								 x-id="Header_62"
+								 x-dynamic="false">
+								<span data-ve-dynamic="true" x-excluded="true" style="display: contents">
+									<button class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition-all duration-200 relative group rounded-lg hover:bg-blue-50 text-gray-800"
+											x-file-name="Header"
+											x-line-number="64"
+											x-component="button"
+											x-id="Header_64"
+											x-dynamic="true"
+											x-source-type="static-imported"
+											x-source-var="navItems"
+											x-source-file-abs="/app/frontend/src/components/Header.jsx"
+											x-source-line="25"
+											x-source-editable="true"
+											x-array-var="navItems"
+											x-array-line="25"
+											x-array-item-param="item">
+										<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Home</span><span class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-blue-600 group-hover:w-8 transition-all duration-300"
+																																  x-file-name="Header"
+																																  x-line-number="72"
+																																  x-component="span"
+																																  x-id="Header_72"
+																																  x-dynamic="true"
+																																  x-source-type="static-imported"
+																																  x-source-var="navItems"
+																																  x-source-file-abs="/app/frontend/src/components/Header.jsx"
+																																  x-source-line="25"
+																																  x-source-editable="true"
+																																  x-array-var="navItems"
+																																  x-array-line="25"
+																																  x-array-item-param="item"></span>
+									</button><button class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition-all duration-200 relative group rounded-lg hover:bg-blue-50 text-gray-800"
+													 x-file-name="Header"
+													 x-line-number="64"
+													 x-component="button"
+													 x-id="Header_64"
+													 x-dynamic="true"
+													 x-source-type="static-imported"
+													 x-source-var="navItems"
+													 x-source-file-abs="/app/frontend/src/components/Header.jsx"
+													 x-source-line="25"
+													 x-source-editable="true"
+													 x-array-var="navItems"
+													 x-array-line="25"
+													 x-array-item-param="item">
+										<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Services</span><span class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-blue-600 group-hover:w-8 transition-all duration-300"
+																																	  x-file-name="Header"
+																																	  x-line-number="72"
+																																	  x-component="span"
+																																	  x-id="Header_72"
+																																	  x-dynamic="true"
+																																	  x-source-type="static-imported"
+																																	  x-source-var="navItems"
+																																	  x-source-file-abs="/app/frontend/src/components/Header.jsx"
+																																	  x-source-line="25"
+																																	  x-source-editable="true"
+																																	  x-array-var="navItems"
+																																	  x-array-line="25"
+																																	  x-array-item-param="item"></span>
+									</button><button class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition-all duration-200 relative group rounded-lg hover:bg-blue-50 text-gray-800"
+													 x-file-name="Header"
+													 x-line-number="64"
+													 x-component="button"
+													 x-id="Header_64"
+													 x-dynamic="true"
+													 x-source-type="static-imported"
+													 x-source-var="navItems"
+													 x-source-file-abs="/app/frontend/src/components/Header.jsx"
+													 x-source-line="25"
+													 x-source-editable="true"
+													 x-array-var="navItems"
+													 x-array-line="25"
+													 x-array-item-param="item">
+										<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Portfolio</span><span class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-blue-600 group-hover:w-8 transition-all duration-300"
+																																	   x-file-name="Header"
+																																	   x-line-number="72"
+																																	   x-component="span"
+																																	   x-id="Header_72"
+																																	   x-dynamic="true"
+																																	   x-source-type="static-imported"
+																																	   x-source-var="navItems"
+																																	   x-source-file-abs="/app/frontend/src/components/Header.jsx"
+																																	   x-source-line="25"
+																																	   x-source-editable="true"
+																																	   x-array-var="navItems"
+																																	   x-array-line="25"
+																																	   x-array-item-param="item"></span>
+									</button><button class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition-all duration-200 relative group rounded-lg hover:bg-blue-50 text-gray-800"
+													 x-file-name="Header"
+													 x-line-number="64"
+													 x-component="button"
+													 x-id="Header_64"
+													 x-dynamic="true"
+													 x-source-type="static-imported"
+													 x-source-var="navItems"
+													 x-source-file-abs="/app/frontend/src/components/Header.jsx"
+													 x-source-line="25"
+													 x-source-editable="true"
+													 x-array-var="navItems"
+													 x-array-line="25"
+													 x-array-item-param="item">
+										<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Testimonials</span><span class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-blue-600 group-hover:w-8 transition-all duration-300"
+																																		  x-file-name="Header"
+																																		  x-line-number="72"
+																																		  x-component="span"
+																																		  x-id="Header_72"
+																																		  x-dynamic="true"
+																																		  x-source-type="static-imported"
+																																		  x-source-var="navItems"
+																																		  x-source-file-abs="/app/frontend/src/components/Header.jsx"
+																																		  x-source-line="25"
+																																		  x-source-editable="true"
+																																		  x-array-var="navItems"
+																																		  x-array-line="25"
+																																		  x-array-item-param="item"></span>
+									</button><button class="px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition-all duration-200 relative group rounded-lg hover:bg-blue-50 text-gray-800"
+													 x-file-name="Header"
+													 x-line-number="64"
+													 x-component="button"
+													 x-id="Header_64"
+													 x-dynamic="true"
+													 x-source-type="static-imported"
+													 x-source-var="navItems"
+													 x-source-file-abs="/app/frontend/src/components/Header.jsx"
+													 x-source-line="25"
+													 x-source-editable="true"
+													 x-array-var="navItems"
+													 x-array-line="25"
+													 x-array-item-param="item">
+										<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Contact</span><span class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-blue-600 group-hover:w-8 transition-all duration-300"
+																																	 x-file-name="Header"
+																																	 x-line-number="72"
+																																	 x-component="span"
+																																	 x-id="Header_72"
+																																	 x-dynamic="true"
+																																	 x-source-type="static-imported"
+																																	 x-source-var="navItems"
+																																	 x-source-file-abs="/app/frontend/src/components/Header.jsx"
+																																	 x-source-line="25"
+																																	 x-source-editable="true"
+																																	 x-array-var="navItems"
+																																	 x-array-line="25"
+																																	 x-array-item-param="item"></span>
+									</button>
+								</span><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-9 ml-4 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 font-semibold shadow-md hover:shadow-lg transition-all duration-200"
+											   x-file-name="Header"
+											   x-line-number="75"
+											   x-component="Button"
+											   x-id="Header_75"
+											   x-dynamic="false">
+									Get Started
+								</button>
+							</nav>
 
-                        <a class="btn btn-primary" href="/Home/Contact">Get A Quote</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <div class="container">
-        @RenderBody()
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div>
-                &copy; 2025 - TechBricks @* - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
-            </div>
-
-            <div class="d-flex align-items-center">
-                <span class="me-2">Follow us:</span>
-
-                <a class="text-reset me-2" href="https://www.linkedin.com/company/tech-bricks-2025" target="_blank" rel="noopener noreferrer" aria-label="TechBricks on LinkedIn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                        <title>LinkedIn</title>
-                        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.98h4.96V24H0V8.98zM8.98 8.98h4.76v2.04h.07c.66-1.25 2.27-2.57 4.67-2.57 4.99 0 5.91 3.28 5.91 7.54V24H19.8v-7.6c0-1.81-.03-4.15-2.53-4.15-2.53 0-2.92 1.98-2.92 4.02V24H8.98V8.98z"/>
-                    </svg>
-                </a>
-
-                <a class="text-reset me-2" href="https://www.facebook.com/profile.php?id=61586116010818" target="_blank" rel="noopener noreferrer" aria-label="TechBricks on Facebook">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                        <title>Facebook</title>
-                        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H8.9v-2.89h1.54V9.41c0-1.52.9-2.36 2.28-2.36.66 0 1.35.12 1.35.12v1.49h-.76c-.75 0-.98.47-.98.95v1.15h1.67l-.27 2.89h-1.4v6.99C18.34 21.12 22 16.99 22 12z"/>
-                    </svg>
-                </a>
-
-                @* <a class="text-reset me-2" href="https://twitter.com/techbricks" target="_blank" rel="noopener noreferrer" aria-label="TechBricks on Twitter">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                        <title>Twitter</title>
-                        <path d="M22.46 6c-.77.35-1.6.58-2.46.69.89-.53 1.57-1.37 1.89-2.37-.83.49-1.75.85-2.72 1.05C17.92 4.6 16.72 4 15.4 4c-2.3 0-4.17 1.86-4.17 4.15 0 .33.04.66.11.97C7.69 9 4.07 7.13 1.64 4.34c-.36.62-.57 1.33-.57 2.09 0 1.44.73 2.71 1.84 3.46-.68-.02-1.32-.21-1.88-.52v.05c0 2.02 1.43 3.7 3.33 4.08-.35.1-.73.15-1.12.15-.27 0-.53-.03-.78-.08.53 1.66 2.06 2.87 3.87 2.9-1.42 1.12-3.2 1.79-5.14 1.79-.33 0-.65-.02-.97-.06 1.83 1.18 4.01 1.86 6.35 1.86 7.62 0 11.8-6.3 11.8-11.76 0-.18 0-.36-.01-.54.81-.58 1.5-1.3 2.05-2.12-.73.32-1.51.53-2.32.62.84-.5 1.48-1.28 1.79-2.21z"/>
-                    </svg>
-                </a>
-
-                <a class="text-reset" href="https://www.instagram.com/techbricks" target="_blank" rel="noopener noreferrer" aria-label="TechBricks on Instagram">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                        <title>Instagram</title>
-                        <path d="M12 2.16c3.2 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.4.6.22 1.03.48 1.48.93.45.45.71.88.93 1.48.16.46.34 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.4 2.43-.22.6-.48 1.03-.93 1.48-.45.45-.88.71-1.48.93-.46.16-1.26.34-2.43.4-1.27.06-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.43-.4-.6-.22-1.03-.48-1.48-.93-.45-.45-.71-.88-.93-1.48-.16-.46-.34-1.26-.4-2.43C2.17 15.58 2.16 15.2 2.16 12s.012-3.584.07-4.85c.056-1.17.24-1.97.4-2.43.22-.6.48-1.03.93-1.48.45-.45.88-.71 1.48-.93.46-.16 1.26-.34 2.43-.4C8.416 2.172 8.8 2.16 12 2.16zm0 1.8c-3.16 0-3.524.012-4.767.069-1.06.05-1.637.22-2.02.367-.51.19-.876.42-1.26.805-.385.386-.616.75-.805 1.26-.147.383-.317.96-.367 2.02-.057 1.243-.069 1.607-.069 4.767s.012 3.524.069 4.767c.05 1.06.22 1.637.367 2.02.19.51.42.876.805 1.26.386.385.75.616 1.26.805.383.147.96.317 2.02.367 1.243.057 1.607.069 4.767.069s3.524-.012 4.767-.069c1.06-.05 1.637-.22 2.02-.367.51-.19.876-.42 1.26-.805.385-.386.616-.75.805-1.26.147-.383.317-.96.367-2.02.057-1.243.069-1.607.069-4.767s-.012-3.524-.069-4.767c-.05-1.06-.22-1.637-.367-2.02-.19-.51-.42-.876-.805-1.26-.386-.385-.75-.616-1.26-.805-.383-.147-.96-.317-2.02-.367C15.524 3.972 15.16 3.96 12 3.96zM12 7.44a4.56 4.56 0 100 9.12 4.56 4.56 0 000-9.12zm0 1.8a2.76 2.76 0 110 5.52 2.76 2.76 0 010-5.52zm5.64-2.97a1.07 1.07 0 11-2.14 0 1.07 1.07 0 012.14 0z"/>
-                    </svg>
-                </a> *@
-            </div>
-        </div>
-    </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @await RenderSectionAsync("Scripts", required: false)
+							<button class="lg:hidden p-2 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50" aria-label="Toggle menu" x-file-name="Header" x-line-number="84" x-component="button" x-id="Header_84" x-dynamic="false">
+								<span data-ve-dynamic="true" x-excluded="true" style="display: contents;">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+										<path d="M4 12h16"></path>
+										<path d="M4 18h16"></path>
+										<path d="M4 6h16"></path>
+									</svg>
+								</span>
+							</button>
+						</div>
+					</div>
+					<span data-ve-dynamic="true" x-excluded="true" style="display: contents;"></span>
+				</header>
+				@RenderBody()
+				<footer class="bg-gray-900 text-gray-300" x-file-name="Footer" x-line-number="33" x-component="footer" x-id="Footer_33" x-dynamic="false">
+					<div class="container mx-auto px-4 lg:px-8 py-16" x-file-name="Footer" x-line-number="35" x-component="div" x-id="Footer_35" x-dynamic="false">
+						<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12" x-file-name="Footer" x-line-number="36" x-component="div" x-id="Footer_36" x-dynamic="false">
+							<div class="space-y-6" x-file-name="Footer" x-line-number="38" x-component="div" x-id="Footer_38" x-dynamic="false">
+								<div class="flex items-center space-x-2" x-file-name="Footer" x-line-number="39" x-component="div" x-id="Footer_39" x-dynamic="false">
+									<div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center" x-file-name="Footer" x-line-number="40" x-component="div" x-id="Footer_40" x-dynamic="false"><span class="text-white font-bold text-xl" x-file-name="Footer" x-line-number="41" x-component="span" x-id="Footer_41" x-dynamic="false">TB</span></div>
+									<span class="text-2xl font-bold text-white" x-file-name="Footer" x-line-number="43" x-component="span" x-id="Footer_43" x-dynamic="false"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Tech-Bricks</span></span>
+								</div>
+								<p class="text-gray-400 leading-relaxed" x-file-name="Footer" x-line-number="47" x-component="p" x-id="Footer_47" x-dynamic="false"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Your trusted partner for innovative IT solutions, from software development to cloud services.</span></p>
+								<div class="space-y-3" x-file-name="Footer" x-line-number="50" x-component="div" x-id="Footer_50" x-dynamic="false">
+									<a href="mailto:contact@techbricks.com" class="flex items-center space-x-3 hover:text-blue-400 transition-colors" x-file-name="Footer" x-line-number="51" x-component="a" x-id="Footer_51" x-dynamic="false">
+										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" aria-hidden="true" x-file-name="Footer" x-line-number="55" x-component="Mail" x-id="Footer_55" x-dynamic="false">
+											<path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+											<rect x="2" y="4" width="20" height="16" rx="2"></rect>
+										</svg>
+										<span x-file-name="Footer" x-line-number="56" x-component="span" x-id="Footer_56" x-dynamic="false"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">contact@techbricks.com</span></span>
+									</a>
+									<a href="tel:+1 (555) 123-4567" class="flex items-center space-x-3 hover:text-blue-400 transition-colors" x-file-name="Footer" x-line-number="58" x-component="a" x-id="Footer_58" x-dynamic="false">
+										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" aria-hidden="true" x-file-name="Footer" x-line-number="62" x-component="Phone" x-id="Footer_62" x-dynamic="false">
+											<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+										</svg>
+										<span x-file-name="Footer" x-line-number="63" x-component="span" x-id="Footer_63" x-dynamic="false"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">+1 (555) 123-4567</span></span>
+									</a>
+									<div class="flex items-start space-x-3" x-file-name="Footer" x-line-number="65" x-component="div" x-id="Footer_65" x-dynamic="false">
+										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin mt-1 flex-shrink-0" aria-hidden="true" x-file-name="Footer" x-line-number="66" x-component="MapPin" x-id="Footer_66" x-dynamic="false">
+											<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+											<circle cx="12" cy="10" r="3"></circle>
+										</svg>
+										<span x-file-name="Footer" x-line-number="67" x-component="span" x-id="Footer_67" x-dynamic="false"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">123 Tech Boulevard, Silicon Valley, CA 94025</span></span>
+									</div>
+								</div>
+							</div>
+							<div x-file-name="Footer" x-line-number="73" x-component="div" x-id="Footer_73" x-dynamic="false">
+								<h3 class="text-white font-bold text-lg mb-6" x-file-name="Footer" x-line-number="74" x-component="h3" x-id="Footer_74" x-dynamic="false">Quick Links</h3>
+								<ul class="space-y-3" x-file-name="Footer" x-line-number="75" x-component="ul" x-id="Footer_75" x-dynamic="false">
+									<span data-ve-dynamic="true" x-excluded="true" style="display: contents;">
+									<li x-file-name="Footer" x-line-number="77" x-component="li" x-id="Footer_77" x-dynamic="true" x-source-type="static-imported" x-source-var="quickLinks" x-source-file-abs="/app/frontend/src/components/Footer.jsx" x-source-line="24" x-source-editable="true" x-array-var="quickLinks" x-array-line="24" x-array-item-param="link"><button class="hover:text-blue-400 transition-colors hover:translate-x-1 inline-block" x-file-name="Footer" x-line-number="78" x-component="button" x-id="Footer_78" x-dynamic="true" x-source-type="static-imported" x-source-var="quickLinks" x-source-file-abs="/app/frontend/src/components/Footer.jsx" x-source-line="24" x-source-editable="true" x-array-var="quickLinks" x-array-line="24" x-array-item-param="link"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Home</span></button></li>
+									<li x-file-name="Footer" x-line-number="77" x-component="li" x-id="Footer_77" x-dynamic="true" x-source-type="static-imported" x-source-var="quickLinks" x-source-file-abs="/app/frontend/src/components/Footer.jsx" x-source-line="24" x-source-editable="true" x-array-var="quickLinks" x-array-line="24" x-array-item-param="link"><button class="hover:text-blue-400 transition-colors hover:translate-x-1 inline-block" x-file-name="Footer" x-line-number="78" x-component="button" x-id="Footer_78" x-dynamic="true" x-source-type="static-imported" x-source-var="quickLinks" x-source-file-abs="/app/frontend/src/components/Footer.jsx" x-source-line="24" x-source-editable="true" x-array-var="quickLinks" x-array-line="24" x-array-item-param="link"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Services</span></button></li>
+									<li x-file-name="Footer" x-line-number="77" x-component="li" x-id="Footer_77" x-dynamic="true" x-source-type="static-imported" x-source-var="quickLinks" x-source-file-abs="/app/frontend/src/components/Footer.jsx" x-source-line="24" x-source-editable="true" x-array-var="quickLinks" x-array-line="24" x-array-item-param="link"><button class="hover:text-blue-400 transition-colors hover:translate-x-1 inline-block" x-file-name="Footer" x-line-number="78" x-component="button" x-id="Footer_78" x-dynamic="true" x-source-type="static-imported" x-source-var="quickLinks" x-source-file-abs="/app/frontend/src/components/Footer.jsx" x-source-line="24" x-source-editable="true" x-array-var="quickLinks" x-array-line="24" x-array-item-param="link"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Portfolio</span></button></li>
+									<li x-file-name="Footer" x-line-number="77" x-component="li" x-id="Footer_77" x-dynamic="true" x-source-type="static-imported" x-source-var="quickLinks" x-source-file-abs="/app/frontend/src/components/Footer.jsx" x-source-line="24" x-source-editable="true" x-array-var="quickLinks" x-array-line="24" x-array-item-param="link"><button class="hover:text-blue-400 transition-colors hover:translate-x-1 inline-block" x-file-name="Footer" x-line-number="78" x-component="button" x-id="Footer_78" x-dynamic="true" x-source-type="static-imported" x-source-var="quickLinks" x-source-file-abs="/app/frontend/src/components/Footer.jsx" x-source-line="24" x-source-editable="true" x-array-var="quickLinks" x-array-line="24" x-array-item-param="link"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Testimonials</span></button></li>
+									<li x-file-name="Footer" x-line-number="77" x-component="li" x-id="Footer_77" x-dynamic="true" x-source-type="static-imported" x-source-var="quickLinks" x-source-file-abs="/app/frontend/src/components/Footer.jsx" x-source-line="24" x-source-editable="true" x-array-var="quickLinks" x-array-line="24" x-array-item-param="link"><button class="hover:text-blue-400 transition-colors hover:translate-x-1 inline-block" x-file-name="Footer" x-line-number="78" x-component="button" x-id="Footer_78" x-dynamic="true" x-source-type="static-imported" x-source-var="quickLinks" x-source-file-abs="/app/frontend/src/components/Footer.jsx" x-source-line="24" x-source-editable="true" x-array-var="quickLinks" x-array-line="24" x-array-item-param="link"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Contact</span></button></li>
+									</span>
+								</ul>
+							</div>
+							<div x-file-name="Footer" x-line-number="90" x-component="div" x-id="Footer_90" x-dynamic="false">
+								<h3 class="text-white font-bold text-lg mb-6" x-file-name="Footer" x-line-number="91" x-component="h3" x-id="Footer_91" x-dynamic="false">Our Services</h3>
+								<ul class="space-y-3" x-file-name="Footer" x-line-number="92" x-component="ul" x-id="Footer_92" x-dynamic="false">
+									<span data-ve-dynamic="true" x-excluded="true" style="display: contents;">
+									<li class="flex items-center space-x-2 hover:text-blue-400 transition-colors" x-file-name="Footer" x-line-number="96" x-component="li" x-id="Footer_96" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code" aria-hidden="true" x-file-name="Footer" x-line-number="97" x-component="IconComponent" x-id="Footer_97" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service">
+											<polyline points="16 18 22 12 16 6"></polyline>
+											<polyline points="8 6 2 12 8 18"></polyline>
+										</svg>
+										<span x-file-name="Footer" x-line-number="98" x-component="span" x-id="Footer_98" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Software Development</span></span>
+									</li>
+									<li class="flex items-center space-x-2 hover:text-blue-400 transition-colors" x-file-name="Footer" x-line-number="96" x-component="li" x-id="Footer_96" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone" aria-hidden="true" x-file-name="Footer" x-line-number="97" x-component="IconComponent" x-id="Footer_97" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service">
+											<rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect>
+											<path d="M12 18h.01"></path>
+										</svg>
+										<span x-file-name="Footer" x-line-number="98" x-component="span" x-id="Footer_98" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Mobile Development</span></span>
+									</li>
+									<li class="flex items-center space-x-2 hover:text-blue-400 transition-colors" x-file-name="Footer" x-line-number="96" x-component="li" x-id="Footer_96" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw" aria-hidden="true" x-file-name="Footer" x-line-number="97" x-component="IconComponent" x-id="Footer_97" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service">
+											<path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+											<path d="M21 3v5h-5"></path>
+											<path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+											<path d="M8 16H3v5"></path>
+										</svg>
+										<span x-file-name="Footer" x-line-number="98" x-component="span" x-id="Footer_98" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Legacy Transformation</span></span>
+									</li>
+									<li class="flex items-center space-x-2 hover:text-blue-400 transition-colors" x-file-name="Footer" x-line-number="96" x-component="li" x-id="Footer_96" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones" aria-hidden="true" x-file-name="Footer" x-line-number="97" x-component="IconComponent" x-id="Footer_97" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service">
+											<path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path>
+										</svg>
+										<span x-file-name="Footer" x-line-number="98" x-component="span" x-id="Footer_98" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">IT Support</span></span>
+									</li>
+									<li class="flex items-center space-x-2 hover:text-blue-400 transition-colors" x-file-name="Footer" x-line-number="96" x-component="li" x-id="Footer_96" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud" aria-hidden="true" x-file-name="Footer" x-line-number="97" x-component="IconComponent" x-id="Footer_97" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service">
+											<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+										</svg>
+										<span x-file-name="Footer" x-line-number="98" x-component="span" x-id="Footer_98" x-dynamic="true" x-source-type="external" x-source-editable="false" x-array-item-param="service"><span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Cloud Services</span></span>
+									</li>
+									</span>
+								</ul>
+							</div>
+							<div x-file-name="Footer" x-line-number="106" x-component="div" x-id="Footer_106" x-dynamic="false">
+								<h3 class="text-white font-bold text-lg mb-6" x-file-name="Footer" x-line-number="107" x-component="h3" x-id="Footer_107" x-dynamic="false">Working Hours</h3>
+								<ul class="space-y-3" x-file-name="Footer" x-line-number="108" x-component="ul" x-id="Footer_108" x-dynamic="false">
+									<li x-file-name="Footer" x-line-number="109" x-component="li" x-id="Footer_109" x-dynamic="false">
+										<div class="font-semibold text-white" x-file-name="Footer" x-line-number="110" x-component="div" x-id="Footer_110" x-dynamic="false">Monday - Friday</div>
+										<div class="text-gray-400" x-file-name="Footer" x-line-number="111" x-component="div" x-id="Footer_111" x-dynamic="false">9:00 AM - 6:00 PM</div>
+									</li>
+									<li x-file-name="Footer" x-line-number="113" x-component="li" x-id="Footer_113" x-dynamic="false">
+										<div class="font-semibold text-white" x-file-name="Footer" x-line-number="114" x-component="div" x-id="Footer_114" x-dynamic="false">Saturday</div>
+										<div class="text-gray-400" x-file-name="Footer" x-line-number="115" x-component="div" x-id="Footer_115" x-dynamic="false">10:00 AM - 4:00 PM</div>
+									</li>
+									<li x-file-name="Footer" x-line-number="117" x-component="li" x-id="Footer_117" x-dynamic="false">
+										<div class="font-semibold text-white" x-file-name="Footer" x-line-number="118" x-component="div" x-id="Footer_118" x-dynamic="false">Sunday</div>
+										<div class="text-gray-400" x-file-name="Footer" x-line-number="119" x-component="div" x-id="Footer_119" x-dynamic="false">Closed</div>
+									</li>
+								</ul>
+								<div class="mt-6 p-4 bg-blue-600 rounded-lg" x-file-name="Footer" x-line-number="122" x-component="div" x-id="Footer_122" x-dynamic="false">
+									<div class="text-white font-semibold mb-1" x-file-name="Footer" x-line-number="123" x-component="div" x-id="Footer_123" x-dynamic="false">24/7 Support</div>
+									<div class="text-blue-100 text-sm" x-file-name="Footer" x-line-number="124" x-component="div" x-id="Footer_124" x-dynamic="false">Emergency IT support available round the clock</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="border-t border-gray-800" x-file-name="Footer" x-line-number="133" x-component="div" x-id="Footer_133" x-dynamic="false">
+						<div class="container mx-auto px-4 lg:px-8 py-6" x-file-name="Footer" x-line-number="134" x-component="div" x-id="Footer_134" x-dynamic="false">
+							<div class="flex flex-col md:flex-row justify-between items-center gap-4" x-file-name="Footer" x-line-number="135" x-component="div" x-id="Footer_135" x-dynamic="false">
+								<p class="text-gray-400 text-sm" x-file-name="Footer" x-line-number="136" x-component="p" x-id="Footer_136" x-dynamic="false">© <span data-ve-dynamic="true" x-excluded="true" style="display: contents;">2026</span> <span data-ve-dynamic="true" x-excluded="true" style="display: contents;">Tech-Bricks</span>. All rights reserved.</p>
+								<div class="flex gap-6 text-sm" x-file-name="Footer" x-line-number="139" x-component="div" x-id="Footer_139" x-dynamic="false"><button class="text-gray-400 hover:text-blue-400 transition-colors" x-file-name="Footer" x-line-number="140" x-component="button" x-id="Footer_140" x-dynamic="false">Privacy Policy</button><button class="text-gray-400 hover:text-blue-400 transition-colors" x-file-name="Footer" x-line-number="143" x-component="button" x-id="Footer_143" x-dynamic="false">Terms of Service</button><button class="text-gray-400 hover:text-blue-400 transition-colors" x-file-name="Footer" x-line-number="146" x-component="button" x-id="Footer_146" x-dynamic="false">Cookie Policy</button></div>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+			<section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false"></section>
+		</div>
+	</div>
 </body>
 </html>
