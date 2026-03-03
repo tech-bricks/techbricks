@@ -14,7 +14,6 @@ namespace TechBricks.Controllers
             _emailSender = emailSender;
         }
 
-        [Route("home")]
         public IActionResult Index()
         {
             // MVC looks for a view at: /Views/Home/Index.cshtml
