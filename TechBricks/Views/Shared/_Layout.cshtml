@@ -189,18 +189,31 @@
 								</button>
 							</nav>
 
-							<button class="lg:hidden p-2 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50" aria-label="Toggle menu" x-file-name="Header" x-line-number="84" x-component="button" x-id="Header_84" x-dynamic="false">
-								<span data-ve-dynamic="true" x-excluded="true" style="display: contents;">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
-										<path d="M4 12h16"></path>
-										<path d="M4 18h16"></path>
-										<path d="M4 6h16"></path>
-									</svg>
-								</span>
-							</button>
+								<button id="hamburger-btn" class="lg:hidden p-2 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50" aria-label="Toggle menu" x-file-name="Header" x-line-number="84" x-component="button" x-id="Header_84" x-dynamic="false">
+									<span data-ve-dynamic="true" x-excluded="true" style="display: contents;">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+											<path d="M4 12h16"></path>
+											<path d="M4 18h16"></path>
+											<path d="M4 6h16"></path>
+										</svg>
+									</span>
+								</button>
 						</div>
 					</div>
-					<span data-ve-dynamic="true" x-excluded="true" style="display: contents;"></span>
+					<!-- Mobile Menu -->
+					<div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-sm flex flex-col items-center justify-start pt-24 space-y-6 transition-all duration-300 transform translate-x-full lg:hidden" style="display:none;">
+						<button style="padding:0px !important;" class="absolute top-6 right-6 p-2 text-gray-700 hover:text-blue-600 rounded-lg hover:bg-blue-50" id="mobile-menu-close" aria-label="Close menu">
+							<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+							</svg>
+						</button>
+						<a href="#home" class="smooth-scroll text-2xl font-semibold text-gray-900 hover:text-blue-600">Home</a>
+						<a href="#360 tours" class="smooth-scroll text-2xl font-semibold text-gray-900 hover:text-blue-600">360 Tours</a>
+						<a href="#services" class="smooth-scroll text-2xl font-semibold text-gray-900 hover:text-blue-600">Services</a>
+						<a href="#portfolio" class="smooth-scroll text-2xl font-semibold text-gray-900 hover:text-blue-600">Portfolio</a>
+						<a href="#contact" class="smooth-scroll text-2xl font-semibold text-gray-900 hover:text-blue-600">Contact</a>
+						<!-- Add more links as needed -->
+					</div>
 				</header>
 
 				<div id="spa-content">

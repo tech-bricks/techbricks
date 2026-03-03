@@ -100,6 +100,20 @@ $(document).ready(function () {
     //allDivs.filter(':gt(' + (allDivs.length - 4) + ')').remove();
     //var allCenter = $('body > center');
     //allCenter.remove();
+
+    // Hamburger menu logic
+    $('#hamburger-btn').on('click', function () {
+        $('#mobile-menu').show().removeClass('translate-x-full').addClass('translate-x-0');
+    });
+    $('#mobile-menu-close').on('click', function () {
+        $('#mobile-menu').hide().removeClass('translate-x-0').addClass('translate-x-full');
+    });
+    // Optional: Hide menu when clicking outside
+    $('#mobile-menu').on('click', function (e) {
+        if (e.target === this) {
+            $(this).hide().removeClass('translate-x-0').addClass('translate-x-full');
+        }
+    });
 });
 
 // SPA navigation for Home button
