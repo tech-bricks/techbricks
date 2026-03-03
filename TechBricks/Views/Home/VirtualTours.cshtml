@@ -1,1322 +1,1265 @@
 ﻿@{
-    // Set the browser tab title
-    ViewData["Title"] = "360 Virtual Tours";
+	// Set the browser tab title
+	ViewData["Title"] = "360 Virtual Tours";
 }
 @section Styles {
 	<link href="~/css/virtual-tour.css" rel="stylesheet" />
 }
 <div class="min-h-screen"
-     x-file-name="App"
-     x-line-number="567"
-     x-component="div"
-     x-id="App_567"
-     x-dynamic="false">
-    <section class="relative bg-gradient-to-br from-purple-600 to-blue-600 text-white py-20"
-             data-testid="virtual-tours-hero"
-             x-file-name="App"
-             x-line-number="569"
-             x-component="section"
-             x-id="App_569"
-             x-dynamic="false">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-             x-file-name="App"
-             x-line-number="570"
-             x-component="div"
-             x-id="App_570"
-             x-dynamic="false">
-            <div class="text-center"
-                 x-file-name="App"
-                 x-line-number="571"
-                 x-component="div"
-                 x-id="App_571"
-                 x-dynamic="false">
-                <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 shadow hover:bg-primary/80 mb-4 bg-white/20 text-white border-white/30"
-                     x-file-name="App"
-                     x-line-number="572"
-                     x-component="Badge"
-                     x-id="App_572"
-                     x-dynamic="false">
-                    Premium Virtual Tour Services
-                </div>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6"
-                    data-testid="virtual-tours-heading"
-                    x-file-name="App"
-                    x-line-number="573"
-                    x-component="h1"
-                    x-id="App_573"
-                    x-dynamic="false">
-                    Google 360° Virtual Tours
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 text-blue-100"
-                   data-testid="virtual-tours-subheading"
-                   x-file-name="App"
-                   x-line-number="574"
-                   x-component="p"
-                   x-id="App_574"
-                   x-dynamic="false">
-                    Showcase your business with immersive 360-degree virtual tours. Increase customer engagement
-                    and boost your online presence.
-                </p>
-                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-10 rounded-md px-8 bg-white text-purple-600 hover:bg-blue-50"
-                        x-file-name="App"
-                        x-line-number="577"
-                        x-component="Button"
-                        x-id="App_577"
-                        x-dynamic="false"
-                        data-testid="virtual-tours-cta">
-                    Get Your Virtual Tour
-                </button>
-            </div>
-        </div>
-    </section>
-    <section class="py-20 bg-white"
-             data-testid="virtual-tours-about"
-             x-file-name="App"
-             x-line-number="585"
-             x-component="section"
-             x-id="App_585"
-             x-dynamic="false">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-             x-file-name="App"
-             x-line-number="586"
-             x-component="div"
-             x-id="App_586"
-             x-dynamic="false">
-            <div class="text-center mb-12"
-                 x-file-name="App"
-                 x-line-number="587"
-                 x-component="div"
-                 x-id="App_587"
-                 x-dynamic="false">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"
-                    x-file-name="App"
-                    x-line-number="588"
-                    x-component="h2"
-                    x-id="App_588"
-                    x-dynamic="false">
-                    What Are Google 360° Virtual Tours?
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto"
-                   x-file-name="App"
-                   x-line-number="589"
-                   x-component="p"
-                   x-id="App_589"
-                   x-dynamic="false">
-                    Google 360° virtual tours are interactive, panoramic images that allow customers to explore
-                    your business location from anywhere in the world. These tours appear on Google Maps, Google
-                    Search, and can be embedded on your website.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8 mt-12"
-                 x-file-name="App"
-                 x-line-number="594"
-                 x-component="div"
-                 x-id="App_594"
-                 x-dynamic="false">
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="595"
-                     x-component="Card"
-                     x-id="App_595"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="596"
-                         x-component="CardHeader"
-                         x-id="App_596"
-                         x-dynamic="true">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4"
-                             x-file-name="App"
-                             x-line-number="597"
-                             x-component="div"
-                             x-id="App_597"
-                             x-dynamic="false">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="24"
-                                 height="24"
-                                 viewBox="0 0 24 24"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 stroke-width="2"
-                                 stroke-linecap="round"
-                                 stroke-linejoin="round"
-                                 class="lucide lucide-camera w-6 h-6 text-purple-600"
-                                 aria-hidden="true"
-                                 x-file-name="App"
-                                 x-line-number="598"
-                                 x-component="Camera"
-                                 x-id="App_598"
-                                 x-dynamic="false">
-                                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
-                                <circle cx="12" cy="13" r="3"></circle>
-                            </svg>
-                        </div>
-                        <div class="font-semibold leading-none tracking-tight"
-                             x-file-name="App"
-                             x-line-number="600"
-                             x-component="CardTitle"
-                             x-id="App_600"
-                             x-dynamic="false">
-                            Professional Photography
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="601"
-                             x-component="CardDescription"
-                             x-id="App_601"
-                             x-dynamic="false">
-                            High-quality 360° images captured by certified Google Street View photographers.
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="604"
-                     x-component="Card"
-                     x-id="App_604"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="605"
-                         x-component="CardHeader"
-                         x-id="App_605"
-                         x-dynamic="true">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
-                             x-file-name="App"
-                             x-line-number="606"
-                             x-component="div"
-                             x-id="App_606"
-                             x-dynamic="false">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="24"
-                                 height="24"
-                                 viewBox="0 0 24 24"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 stroke-width="2"
-                                 stroke-linecap="round"
-                                 stroke-linejoin="round"
-                                 class="lucide lucide-server w-6 h-6 text-blue-600"
-                                 aria-hidden="true"
-                                 x-file-name="App"
-                                 x-line-number="607"
-                                 x-component="Server"
-                                 x-id="App_607"
-                                 x-dynamic="false">
-                                <rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect>
-                                <rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect>
-                                <line x1="6" x2="6.01" y1="6" y2="6"></line>
-                                <line x1="6" x2="6.01" y1="18" y2="18"></line>
-                            </svg>
-                        </div>
-                        <div class="font-semibold leading-none tracking-tight"
-                             x-file-name="App"
-                             x-line-number="609"
-                             x-component="CardTitle"
-                             x-id="App_609"
-                             x-dynamic="false">
-                            Google Maps Integration
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="610"
-                             x-component="CardDescription"
-                             x-id="App_610"
-                             x-dynamic="false">
-                            Your tour appears directly in Google Maps and Google Search results.
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="613"
-                     x-component="Card"
-                     x-id="App_613"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="614"
-                         x-component="CardHeader"
-                         x-id="App_614"
-                         x-dynamic="true">
-                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4"
-                             x-file-name="App"
-                             x-line-number="615"
-                             x-component="div"
-                             x-id="App_615"
-                             x-dynamic="false">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="24"
-                                 height="24"
-                                 viewBox="0 0 24 24"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 stroke-width="2"
-                                 stroke-linecap="round"
-                                 stroke-linejoin="round"
-                                 class="lucide lucide-code w-6 h-6 text-green-600"
-                                 aria-hidden="true"
-                                 x-file-name="App"
-                                 x-line-number="616"
-                                 x-component="Code"
-                                 x-id="App_616"
-                                 x-dynamic="false">
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                        </div>
-                        <div class="font-semibold leading-none tracking-tight"
-                             x-file-name="App"
-                             x-line-number="618"
-                             x-component="CardTitle"
-                             x-id="App_618"
-                             x-dynamic="false">
-                            Website Embedding
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="619"
-                             x-component="CardDescription"
-                             x-id="App_619"
-                             x-dynamic="false">
-                            Easily embed your virtual tour on your website to engage visitors.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-20 bg-gray-50"
-             data-testid="virtual-tours-samples"
-             x-file-name="App"
-             x-line-number="627"
-             x-component="section"
-             x-id="App_627"
-             x-dynamic="false">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-             x-file-name="App"
-             x-line-number="628"
-             x-component="div"
-             x-id="App_628"
-             x-dynamic="false">
-            <div class="text-center mb-12"
-                 x-file-name="App"
-                 x-line-number="629"
-                 x-component="div"
-                 x-id="App_629"
-                 x-dynamic="false">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"
-                    x-file-name="App"
-                    x-line-number="630"
-                    x-component="h2"
-                    x-id="App_630"
-                    x-dynamic="false">
-                    Sample Virtual Tours
-                </h2>
-                <p class="text-xl text-gray-600"
-                   x-file-name="App"
-                   x-line-number="631"
-                   x-component="p"
-                   x-id="App_631"
-                   x-dynamic="false">
-                    Experience the immersive power of 360° virtual tours
-                </p>
-                <p class="text-sm text-gray-500 mt-2"
-                   x-file-name="App"
-                   x-line-number="632"
-                   x-component="p"
-                   x-id="App_632"
-                   x-dynamic="false">
-                    Note: These are placeholder embeds. Replace with your actual Google 360° tour URLs.
-                </p>
-            </div>
-            <div class="space-y-12"
-                 x-file-name="App"
-                 x-line-number="635"
-                 x-component="div"
-                 x-id="App_635"
-                 x-dynamic="false">
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="637"
-                     x-component="Card"
-                     x-id="App_637"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="638"
-                         x-component="CardHeader"
-                         x-id="App_638"
-                         x-dynamic="true">
-                        <div class="font-semibold leading-none tracking-tight"
-                             x-file-name="App"
-                             x-line-number="639"
-                             x-component="CardTitle"
-                             x-id="App_639"
-                             x-dynamic="false">
-                            Retail Store Virtual Tour
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="640"
-                             x-component="CardDescription"
-                             x-id="App_640"
-                             x-dynamic="false">
-                            Example of a retail store 360° tour showing products and layout
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0"
-                         x-file-name="App"
-                         x-line-number="642"
-                         x-component="CardContent"
-                         x-id="App_642"
-                         x-dynamic="true"
-                         x-excluded="true">
-                        <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden"
-                             data-testid="sample-tour-1"
-                             x-file-name="App"
-                             x-line-number="643"
-                             x-component="div"
-                             x-id="App_643"
-                             x-dynamic="false">
-                            <iframe src="https://www.google.com/maps/embed?pb=!4v1234567890!6m8!1m7!1sCAoSLEFGMVFpcE1xLW9Hb3J3TFBxcmotNTFHX2FmZ1BhX0VfQXhFMWNFdURvczY3!2m2!1d37.422!2d-122.084!3f0!4f0!5f0.7820865974627469"
-                                    width="100%"
-                                    height="100%"
-                                    allowfullscreen=""
-                                    loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"
-                                    title="Sample Virtual Tour 1"
-                                    x-file-name="App"
-                                    x-line-number="644"
-                                    x-component="iframe"
-                                    x-id="App_644"
-                                    x-dynamic="false"
-                                    style="border: 0px"></iframe>
-                        </div>
-                        <div class="mt-4 p-4 bg-blue-50 rounded-lg"
-                             x-file-name="App"
-                             x-line-number="655"
-                             x-component="div"
-                             x-id="App_655"
-                             x-dynamic="false">
-                            <p class="text-sm text-gray-700"
-                               x-file-name="App"
-                               x-line-number="656"
-                               x-component="p"
-                               x-id="App_656"
-                               x-dynamic="false">
-                                <strong x-file-name="App"
-                                        x-line-number="657"
-                                        x-component="strong"
-                                        x-id="App_657"
-                                        x-dynamic="false">How to replace:</strong>
-                                Get your Google 360° tour embed code from Google Street View, then paste it
-                                here.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="664"
-                     x-component="Card"
-                     x-id="App_664"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="665"
-                         x-component="CardHeader"
-                         x-id="App_665"
-                         x-dynamic="true">
-                        <div class="font-semibold leading-none tracking-tight"
-                             x-file-name="App"
-                             x-line-number="666"
-                             x-component="CardTitle"
-                             x-id="App_666"
-                             x-dynamic="false">
-                            Restaurant Virtual Tour
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="667"
-                             x-component="CardDescription"
-                             x-id="App_667"
-                             x-dynamic="false">
-                            Example of a restaurant interior 360° tour showcasing ambiance
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0"
-                         x-file-name="App"
-                         x-line-number="669"
-                         x-component="CardContent"
-                         x-id="App_669"
-                         x-dynamic="true"
-                         x-excluded="true">
-                        <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden"
-                             data-testid="sample-tour-2"
-                             x-file-name="App"
-                             x-line-number="670"
-                             x-component="div"
-                             x-id="App_670"
-                             x-dynamic="false">
-                            <iframe src="https://www.google.com/maps/embed?pb=!4v1234567890!6m8!1m7!1sCAoSLEFGMVFpcE5fTnBxLW9Hb3J3TFBxcmotNTFHX2FmZ1BhX0VfQXhFMWNFdURvczY3!2m2!1d37.422!2d-122.084!3f90!4f0!5f0.7820865974627469"
-                                    width="100%"
-                                    height="100%"
-                                    allowfullscreen=""
-                                    loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"
-                                    title="Sample Virtual Tour 2"
-                                    x-file-name="App"
-                                    x-line-number="671"
-                                    x-component="iframe"
-                                    x-id="App_671"
-                                    x-dynamic="false"
-                                    style="border: 0px"></iframe>
-                        </div>
-                        <div class="mt-4 p-4 bg-blue-50 rounded-lg"
-                             x-file-name="App"
-                             x-line-number="682"
-                             x-component="div"
-                             x-id="App_682"
-                             x-dynamic="false">
-                            <p class="text-sm text-gray-700"
-                               x-file-name="App"
-                               x-line-number="683"
-                               x-component="p"
-                               x-id="App_683"
-                               x-dynamic="false">
-                                <strong x-file-name="App"
-                                        x-line-number="684"
-                                        x-component="strong"
-                                        x-id="App_684"
-                                        x-dynamic="false">Integration:</strong>
-                                These iframe embeds can be customized with your actual tour IDs from Google My
-                                Business.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="691"
-                     x-component="Card"
-                     x-id="App_691"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="692"
-                         x-component="CardHeader"
-                         x-id="App_692"
-                         x-dynamic="true">
-                        <div class="font-semibold leading-none tracking-tight"
-                             x-file-name="App"
-                             x-line-number="693"
-                             x-component="CardTitle"
-                             x-id="App_693"
-                             x-dynamic="false">
-                            Office Space Virtual Tour
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="694"
-                             x-component="CardDescription"
-                             x-id="App_694"
-                             x-dynamic="false">
-                            Example of a modern office space 360° tour
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0"
-                         x-file-name="App"
-                         x-line-number="696"
-                         x-component="CardContent"
-                         x-id="App_696"
-                         x-dynamic="true"
-                         x-excluded="true">
-                        <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden"
-                             data-testid="sample-tour-3"
-                             x-file-name="App"
-                             x-line-number="697"
-                             x-component="div"
-                             x-id="App_697"
-                             x-dynamic="false">
-                            <iframe src="https://www.google.com/maps/embed?pb=!4v1234567890!6m8!1m7!1sCAoSLEFGMVFpcE9fTnBxLW9Hb3J3TFBxcmotNTFHX2FmZ1BhX0VfQXhFMWNFdURvczY3!2m2!1d37.422!2d-122.084!3f180!4f10!5f0.7820865974627469"
-                                    width="100%"
-                                    height="100%"
-                                    allowfullscreen=""
-                                    loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"
-                                    title="Sample Virtual Tour 3"
-                                    x-file-name="App"
-                                    x-line-number="698"
-                                    x-component="iframe"
-                                    x-id="App_698"
-                                    x-dynamic="false"
-                                    style="border: 0px"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-20 bg-white"
-             data-testid="virtual-tours-benefits"
-             x-file-name="App"
-             x-line-number="716"
-             x-component="section"
-             x-id="App_716"
-             x-dynamic="false">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-             x-file-name="App"
-             x-line-number="717"
-             x-component="div"
-             x-id="App_717"
-             x-dynamic="false">
-            <div class="text-center mb-12"
-                 x-file-name="App"
-                 x-line-number="718"
-                 x-component="div"
-                 x-id="App_718"
-                 x-dynamic="false">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"
-                    x-file-name="App"
-                    x-line-number="719"
-                    x-component="h2"
-                    x-id="App_719"
-                    x-dynamic="false">
-                    Benefits of Virtual Tours
-                </h2>
-                <p class="text-xl text-gray-600"
-                   x-file-name="App"
-                   x-line-number="720"
-                   x-component="p"
-                   x-id="App_720"
-                   x-dynamic="false">
-                    Why your business needs a Google 360° virtual tour
-                </p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-                 x-file-name="App"
-                 x-line-number="723"
-                 x-component="div"
-                 x-id="App_723"
-                 x-dynamic="false">
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="724"
-                     x-component="Card"
-                     x-id="App_724"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="725"
-                         x-component="CardHeader"
-                         x-id="App_725"
-                         x-dynamic="true">
-                        <div class="font-semibold leading-none tracking-tight flex items-center"
-                             x-file-name="App"
-                             x-line-number="726"
-                             x-component="CardTitle"
-                             x-id="App_726"
-                             x-dynamic="false">
-                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3"
-                                 x-file-name="App"
-                                 x-line-number="727"
-                                 x-component="div"
-                                 x-id="App_727"
-                                 x-dynamic="false">
-                                <span class="text-green-600 font-bold"
-                                      x-file-name="App"
-                                      x-line-number="728"
-                                      x-component="span"
-                                      x-id="App_728"
-                                      x-dynamic="false">1</span>
-                            </div>
-                            Increase Visibility
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="732"
-                             x-component="CardDescription"
-                             x-id="App_732"
-                             x-dynamic="false">
-                            Boost your online presence on Google Search and Maps, making it easier for customers
-                            to find you.
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="735"
-                     x-component="Card"
-                     x-id="App_735"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="736"
-                         x-component="CardHeader"
-                         x-id="App_736"
-                         x-dynamic="true">
-                        <div class="font-semibold leading-none tracking-tight flex items-center"
-                             x-file-name="App"
-                             x-line-number="737"
-                             x-component="CardTitle"
-                             x-id="App_737"
-                             x-dynamic="false">
-                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3"
-                                 x-file-name="App"
-                                 x-line-number="738"
-                                 x-component="div"
-                                 x-id="App_738"
-                                 x-dynamic="false">
-                                <span class="text-blue-600 font-bold"
-                                      x-file-name="App"
-                                      x-line-number="739"
-                                      x-component="span"
-                                      x-id="App_739"
-                                      x-dynamic="false">2</span>
-                            </div>
-                            Build Trust
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="743"
-                             x-component="CardDescription"
-                             x-id="App_743"
-                             x-dynamic="false">
-                            Let customers see your space before visiting, building confidence and transparency.
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="746"
-                     x-component="Card"
-                     x-id="App_746"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="747"
-                         x-component="CardHeader"
-                         x-id="App_747"
-                         x-dynamic="true">
-                        <div class="font-semibold leading-none tracking-tight flex items-center"
-                             x-file-name="App"
-                             x-line-number="748"
-                             x-component="CardTitle"
-                             x-id="App_748"
-                             x-dynamic="false">
-                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3"
-                                 x-file-name="App"
-                                 x-line-number="749"
-                                 x-component="div"
-                                 x-id="App_749"
-                                 x-dynamic="false">
-                                <span class="text-purple-600 font-bold"
-                                      x-file-name="App"
-                                      x-line-number="750"
-                                      x-component="span"
-                                      x-id="App_750"
-                                      x-dynamic="false">3</span>
-                            </div>
-                            Drive Engagement
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="754"
-                             x-component="CardDescription"
-                             x-id="App_754"
-                             x-dynamic="false">
-                            Interactive tours keep visitors engaged 5x longer than static images.
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="757"
-                     x-component="Card"
-                     x-id="App_757"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="758"
-                         x-component="CardHeader"
-                         x-id="App_758"
-                         x-dynamic="true">
-                        <div class="font-semibold leading-none tracking-tight flex items-center"
-                             x-file-name="App"
-                             x-line-number="759"
-                             x-component="CardTitle"
-                             x-id="App_759"
-                             x-dynamic="false">
-                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3"
-                                 x-file-name="App"
-                                 x-line-number="760"
-                                 x-component="div"
-                                 x-id="App_760"
-                                 x-dynamic="false">
-                                <span class="text-orange-600 font-bold"
-                                      x-file-name="App"
-                                      x-line-number="761"
-                                      x-component="span"
-                                      x-id="App_761"
-                                      x-dynamic="false">4</span>
-                            </div>
-                            Increase Bookings
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="765"
-                             x-component="CardDescription"
-                             x-id="App_765"
-                             x-dynamic="false">
-                            Businesses with virtual tours receive 2x more interest than those without.
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="768"
-                     x-component="Card"
-                     x-id="App_768"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="769"
-                         x-component="CardHeader"
-                         x-id="App_769"
-                         x-dynamic="true">
-                        <div class="font-semibold leading-none tracking-tight flex items-center"
-                             x-file-name="App"
-                             x-line-number="770"
-                             x-component="CardTitle"
-                             x-id="App_770"
-                             x-dynamic="false">
-                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3"
-                                 x-file-name="App"
-                                 x-line-number="771"
-                                 x-component="div"
-                                 x-id="App_771"
-                                 x-dynamic="false">
-                                <span class="text-red-600 font-bold"
-                                      x-file-name="App"
-                                      x-line-number="772"
-                                      x-component="span"
-                                      x-id="App_772"
-                                      x-dynamic="false">5</span>
-                            </div>
-                            24/7 Showcase
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="776"
-                             x-component="CardDescription"
-                             x-id="App_776"
-                             x-dynamic="false">
-                            Your business is open for virtual visits anytime, anywhere in the world.
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-xl border bg-card text-card-foreground shadow"
-                     x-file-name="App"
-                     x-line-number="779"
-                     x-component="Card"
-                     x-id="App_779"
-                     x-dynamic="true">
-                    <div class="flex flex-col space-y-1.5 p-6"
-                         x-file-name="App"
-                         x-line-number="780"
-                         x-component="CardHeader"
-                         x-id="App_780"
-                         x-dynamic="true">
-                        <div class="font-semibold leading-none tracking-tight flex items-center"
-                             x-file-name="App"
-                             x-line-number="781"
-                             x-component="CardTitle"
-                             x-id="App_781"
-                             x-dynamic="false">
-                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-3"
-                                 x-file-name="App"
-                                 x-line-number="782"
-                                 x-component="div"
-                                 x-id="App_782"
-                                 x-dynamic="false">
-                                <span class="text-indigo-600 font-bold"
-                                      x-file-name="App"
-                                      x-line-number="783"
-                                      x-component="span"
-                                      x-id="App_783"
-                                      x-dynamic="false">6</span>
-                            </div>
-                            Competitive Edge
-                        </div>
-                        <div class="text-sm text-muted-foreground"
-                             x-file-name="App"
-                             x-line-number="787"
-                             x-component="CardDescription"
-                             x-id="App_787"
-                             x-dynamic="false">
-                            Stand out from competitors who only have static photos or no imagery at all.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-20 bg-gray-50"
-             x-file-name="App"
-             x-line-number="795"
-             x-component="section"
-             x-id="App_795"
-             x-dynamic="false">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-             x-file-name="App"
-             x-line-number="796"
-             x-component="div"
-             x-id="App_796"
-             x-dynamic="false">
-            <div class="text-center mb-12"
-                 x-file-name="App"
-                 x-line-number="797"
-                 x-component="div"
-                 x-id="App_797"
-                 x-dynamic="false">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"
-                    x-file-name="App"
-                    x-line-number="798"
-                    x-component="h2"
-                    x-id="App_798"
-                    x-dynamic="false">
-                    Industries We Serve
-                </h2>
-                <p class="text-xl text-gray-600"
-                   x-file-name="App"
-                   x-line-number="799"
-                   x-component="p"
-                   x-id="App_799"
-                   x-dynamic="false">
-                    Virtual tours for every business type
-                </p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-                 x-file-name="App"
-                 x-line-number="802"
-                 x-component="div"
-                 x-id="App_802"
-                 x-dynamic="false">
-                <span data-ve-dynamic="true" x-excluded="true" style="display: contents">
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
-                         x-file-name="App"
-                         x-line-number="804"
-                         x-component="div"
-                         x-id="App_804"
-                         x-dynamic="true"
-                         x-source-type="external"
-                         x-source-editable="false"
-                         x-array-item-param="industry">
-                        <div class="text-lg font-semibold text-gray-800"
-                             x-file-name="App"
-                             x-line-number="805"
-                             x-component="div"
-                             x-id="App_805"
-                             x-dynamic="true"
-                             x-source-type="external"
-                             x-source-editable="false"
-                             x-array-item-param="industry">
-                            <span data-ve-dynamic="true" x-excluded="true" style="display: contents">Restaurants &amp; Cafes</span>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
-                         x-file-name="App"
-                         x-line-number="804"
-                         x-component="div"
-                         x-id="App_804"
-                         x-dynamic="true"
-                         x-source-type="external"
-                         x-source-editable="false"
-                         x-array-item-param="industry">
-                        <div class="text-lg font-semibold text-gray-800"
-                             x-file-name="App"
-                             x-line-number="805"
-                             x-component="div"
-                             x-id="App_805"
-                             x-dynamic="true"
-                             x-source-type="external"
-                             x-source-editable="false"
-                             x-array-item-param="industry">
-                            <span data-ve-dynamic="true" x-excluded="true" style="display: contents">Retail Stores</span>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
-                         x-file-name="App"
-                         x-line-number="804"
-                         x-component="div"
-                         x-id="App_804"
-                         x-dynamic="true"
-                         x-source-type="external"
-                         x-source-editable="false"
-                         x-array-item-param="industry">
-                        <div class="text-lg font-semibold text-gray-800"
-                             x-file-name="App"
-                             x-line-number="805"
-                             x-component="div"
-                             x-id="App_805"
-                             x-dynamic="true"
-                             x-source-type="external"
-                             x-source-editable="false"
-                             x-array-item-param="industry">
-                            <span data-ve-dynamic="true" x-excluded="true" style="display: contents">Hotels &amp; Resorts</span>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
-                         x-file-name="App"
-                         x-line-number="804"
-                         x-component="div"
-                         x-id="App_804"
-                         x-dynamic="true"
-                         x-source-type="external"
-                         x-source-editable="false"
-                         x-array-item-param="industry">
-                        <div class="text-lg font-semibold text-gray-800"
-                             x-file-name="App"
-                             x-line-number="805"
-                             x-component="div"
-                             x-id="App_805"
-                             x-dynamic="true"
-                             x-source-type="external"
-                             x-source-editable="false"
-                             x-array-item-param="industry">
-                            <span data-ve-dynamic="true" x-excluded="true" style="display: contents">Gyms &amp; Fitness Centers</span>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
-                         x-file-name="App"
-                         x-line-number="804"
-                         x-component="div"
-                         x-id="App_804"
-                         x-dynamic="true"
-                         x-source-type="external"
-                         x-source-editable="false"
-                         x-array-item-param="industry">
-                        <div class="text-lg font-semibold text-gray-800"
-                             x-file-name="App"
-                             x-line-number="805"
-                             x-component="div"
-                             x-id="App_805"
-                             x-dynamic="true"
-                             x-source-type="external"
-                             x-source-editable="false"
-                             x-array-item-param="industry">
-                            <span data-ve-dynamic="true" x-excluded="true" style="display: contents">Real Estate</span>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
-                         x-file-name="App"
-                         x-line-number="804"
-                         x-component="div"
-                         x-id="App_804"
-                         x-dynamic="true"
-                         x-source-type="external"
-                         x-source-editable="false"
-                         x-array-item-param="industry">
-                        <div class="text-lg font-semibold text-gray-800"
-                             x-file-name="App"
-                             x-line-number="805"
-                             x-component="div"
-                             x-id="App_805"
-                             x-dynamic="true"
-                             x-source-type="external"
-                             x-source-editable="false"
-                             x-array-item-param="industry">
-                            <span data-ve-dynamic="true" x-excluded="true" style="display: contents">Healthcare Facilities</span>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
-                         x-file-name="App"
-                         x-line-number="804"
-                         x-component="div"
-                         x-id="App_804"
-                         x-dynamic="true"
-                         x-source-type="external"
-                         x-source-editable="false"
-                         x-array-item-param="industry">
-                        <div class="text-lg font-semibold text-gray-800"
-                             x-file-name="App"
-                             x-line-number="805"
-                             x-component="div"
-                             x-id="App_805"
-                             x-dynamic="true"
-                             x-source-type="external"
-                             x-source-editable="false"
-                             x-array-item-param="industry">
-                            <span data-ve-dynamic="true" x-excluded="true" style="display: contents">Educational Institutions</span>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
-                         x-file-name="App"
-                         x-line-number="804"
-                         x-component="div"
-                         x-id="App_804"
-                         x-dynamic="true"
-                         x-source-type="external"
-                         x-source-editable="false"
-                         x-array-item-param="industry">
-                        <div class="text-lg font-semibold text-gray-800"
-                             x-file-name="App"
-                             x-line-number="805"
-                             x-component="div"
-                             x-id="App_805"
-                             x-dynamic="true"
-                             x-source-type="external"
-                             x-source-editable="false"
-                             x-array-item-param="industry">
-                            <span data-ve-dynamic="true" x-excluded="true" style="display: contents">Event Venues</span>
-                        </div>
-                    </div>
-                </span>
-            </div>
-        </div>
-    </section>
-    <section class="py-20 bg-gradient-to-br from-purple-600 to-blue-600 text-white"
-             x-file-name="App"
-             x-line-number="813"
-             x-component="section"
-             x-id="App_813"
-             x-dynamic="false">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-             x-file-name="App"
-             x-line-number="814"
-             x-component="div"
-             x-id="App_814"
-             x-dynamic="false">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4"
-                x-file-name="App"
-                x-line-number="815"
-                x-component="h2"
-                x-id="App_815"
-                x-dynamic="false">
-                Ready to Showcase Your Business?
-            </h2>
-            <p class="text-xl mb-8 text-blue-100"
-               x-file-name="App"
-               x-line-number="816"
-               x-component="p"
-               x-id="App_816"
-               x-dynamic="false">
-                Get a professional Google 360° virtual tour and stand out from the competition. Contact us today
-                for a free consultation and quote.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center"
-                 x-file-name="App"
-                 x-line-number="819"
-                 x-component="div"
-                 x-id="App_819"
-                 x-dynamic="false">
-                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-10 rounded-md px-8 bg-white text-purple-600 hover:bg-blue-50"
-                        x-file-name="App"
-                        x-line-number="820"
-                        x-component="Button"
-                        x-id="App_820"
-                        x-dynamic="false"
-                        data-testid="virtual-tours-contact-cta">
-                    Get a Free Quote
-                </button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border shadow-sm hover:text-accent-foreground h-10 rounded-md px-8 border-white text-white hover:bg-white/10"
-                                 x-file-name="App"
-                                 x-line-number="823"
-                                 x-component="Button"
-                                 x-id="App_823"
-                                 x-dynamic="false"
-                                 data-testid="virtual-tours-call-cta">
-                    Call Us: +1 (555) 123-4567
-                </button>
-            </div>
-        </div>
-    </section>
-    <section class="py-20 bg-white"
-             x-file-name="App"
-             x-line-number="831"
-             x-component="section"
-             x-id="App_831"
-             x-dynamic="false">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-             x-file-name="App"
-             x-line-number="832"
-             x-component="div"
-             x-id="App_832"
-             x-dynamic="false">
-            <div class="text-center mb-12"
-                 x-file-name="App"
-                 x-line-number="833"
-                 x-component="div"
-                 x-id="App_833"
-                 x-dynamic="false">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"
-                    x-file-name="App"
-                    x-line-number="834"
-                    x-component="h2"
-                    x-id="App_834"
-                    x-dynamic="false">
-                    How It Works
-                </h2>
-                <p class="text-xl text-gray-600"
-                   x-file-name="App"
-                   x-line-number="835"
-                   x-component="p"
-                   x-id="App_835"
-                   x-dynamic="false">
-                    Simple process to get your virtual tour
-                </p>
-            </div>
-            <div class="grid md:grid-cols-4 gap-8"
-                 x-file-name="App"
-                 x-line-number="838"
-                 x-component="div"
-                 x-id="App_838"
-                 x-dynamic="false">
-                <div class="text-center"
-                     x-file-name="App"
-                     x-line-number="839"
-                     x-component="div"
-                     x-id="App_839"
-                     x-dynamic="false">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
-                         x-file-name="App"
-                         x-line-number="840"
-                         x-component="div"
-                         x-id="App_840"
-                         x-dynamic="false">
-                        <span class="text-2xl font-bold text-purple-600"
-                              x-file-name="App"
-                              x-line-number="841"
-                              x-component="span"
-                              x-id="App_841"
-                              x-dynamic="false">1</span>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2"
-                        x-file-name="App"
-                        x-line-number="843"
-                        x-component="h3"
-                        x-id="App_843"
-                        x-dynamic="false">
-                        Contact Us
-                    </h3>
-                    <p class="text-gray-600"
-                       x-file-name="App"
-                       x-line-number="844"
-                       x-component="p"
-                       x-id="App_844"
-                       x-dynamic="false">
-                        Reach out for a free consultation and quote
-                    </p>
-                </div>
-                <div class="text-center"
-                     x-file-name="App"
-                     x-line-number="846"
-                     x-component="div"
-                     x-id="App_846"
-                     x-dynamic="false">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
-                         x-file-name="App"
-                         x-line-number="847"
-                         x-component="div"
-                         x-id="App_847"
-                         x-dynamic="false">
-                        <span class="text-2xl font-bold text-blue-600"
-                              x-file-name="App"
-                              x-line-number="848"
-                              x-component="span"
-                              x-id="App_848"
-                              x-dynamic="false">2</span>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2"
-                        x-file-name="App"
-                        x-line-number="850"
-                        x-component="h3"
-                        x-id="App_850"
-                        x-dynamic="false">
-                        Schedule Shoot
-                    </h3>
-                    <p class="text-gray-600"
-                       x-file-name="App"
-                       x-line-number="851"
-                       x-component="p"
-                       x-id="App_851"
-                       x-dynamic="false">
-                        We arrange a convenient time for photography
-                    </p>
-                </div>
-                <div class="text-center"
-                     x-file-name="App"
-                     x-line-number="853"
-                     x-component="div"
-                     x-id="App_853"
-                     x-dynamic="false">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
-                         x-file-name="App"
-                         x-line-number="854"
-                         x-component="div"
-                         x-id="App_854"
-                         x-dynamic="false">
-                        <span class="text-2xl font-bold text-green-600"
-                              x-file-name="App"
-                              x-line-number="855"
-                              x-component="span"
-                              x-id="App_855"
-                              x-dynamic="false">3</span>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2"
-                        x-file-name="App"
-                        x-line-number="857"
-                        x-component="h3"
-                        x-id="App_857"
-                        x-dynamic="false">
-                        Professional Capture
-                    </h3>
-                    <p class="text-gray-600"
-                       x-file-name="App"
-                       x-line-number="858"
-                       x-component="p"
-                       x-id="App_858"
-                       x-dynamic="false">
-                        Our certified photographers capture your space
-                    </p>
-                </div>
-                <div class="text-center"
-                     x-file-name="App"
-                     x-line-number="860"
-                     x-component="div"
-                     x-id="App_860"
-                     x-dynamic="false">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"
-                         x-file-name="App"
-                         x-line-number="861"
-                         x-component="div"
-                         x-id="App_861"
-                         x-dynamic="false">
-                        <span class="text-2xl font-bold text-orange-600"
-                              x-file-name="App"
-                              x-line-number="862"
-                              x-component="span"
-                              x-id="App_862"
-                              x-dynamic="false">4</span>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2"
-                        x-file-name="App"
-                        x-line-number="864"
-                        x-component="h3"
-                        x-id="App_864"
-                        x-dynamic="false">
-                        Go Live
-                    </h3>
-                    <p class="text-gray-600"
-                       x-file-name="App"
-                       x-line-number="865"
-                       x-component="p"
-                       x-id="App_865"
-                       x-dynamic="false">
-                        Your tour goes live on Google and your website
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+	 x-file-name="App"
+	 x-line-number="567"
+	 x-component="div"
+	 x-id="App_567"
+	 x-dynamic="false">
+	<section class="relative bg-gradient-to-br from-purple-600 to-blue-600 text-white py-20"
+			 data-testid="virtual-tours-hero"
+			 x-file-name="App"
+			 x-line-number="569"
+			 x-component="section"
+			 x-id="App_569"
+			 x-dynamic="false">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+			 x-file-name="App"
+			 x-line-number="570"
+			 x-component="div"
+			 x-id="App_570"
+			 x-dynamic="false">
+			<div class="text-center"
+				 x-file-name="App"
+				 x-line-number="571"
+				 x-component="div"
+				 x-id="App_571"
+				 x-dynamic="false">
+				<div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 shadow hover:bg-primary/80 mb-4 bg-white/20 text-white border-white/30"
+					 x-file-name="App"
+					 x-line-number="572"
+					 x-component="Badge"
+					 x-id="App_572"
+					 x-dynamic="false">
+					Premium Virtual Tour Services
+				</div>
+				<h1 class="text-4xl md:text-6xl font-bold mb-6"
+					data-testid="virtual-tours-heading"
+					x-file-name="App"
+					x-line-number="573"
+					x-component="h1"
+					x-id="App_573"
+					x-dynamic="false">
+					Google 360° Virtual Tours
+				</h1>
+				<p class="text-xl md:text-2xl mb-8 text-blue-100"
+				   data-testid="virtual-tours-subheading"
+				   x-file-name="App"
+				   x-line-number="574"
+				   x-component="p"
+				   x-id="App_574"
+				   x-dynamic="false">
+					Showcase your business with immersive 360-degree virtual tours. Increase customer engagement
+					and boost your online presence.
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class="py-20 bg-white"
+			 data-testid="virtual-tours-about"
+			 x-file-name="App"
+			 x-line-number="585"
+			 x-component="section"
+			 x-id="App_585"
+			 x-dynamic="false">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+			 x-file-name="App"
+			 x-line-number="586"
+			 x-component="div"
+			 x-id="App_586"
+			 x-dynamic="false">
+			<div class="text-center mb-12"
+				 x-file-name="App"
+				 x-line-number="587"
+				 x-component="div"
+				 x-id="App_587"
+				 x-dynamic="false">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4"
+					x-file-name="App"
+					x-line-number="588"
+					x-component="h2"
+					x-id="App_588"
+					x-dynamic="false">
+					What Are Google 360° Virtual Tours?
+				</h2>
+				<p class="text-xl text-gray-600 max-w-3xl mx-auto"
+				   x-file-name="App"
+				   x-line-number="589"
+				   x-component="p"
+				   x-id="App_589"
+				   x-dynamic="false">
+					Google 360° virtual tours are interactive, panoramic images that allow customers to explore
+					your business location from anywhere in the world. These tours appear on Google Maps, Google
+					Search, and can be embedded on your website.
+				</p>
+			</div>
+			<div class="grid md:grid-cols-3 gap-8 mt-12"
+				 x-file-name="App"
+				 x-line-number="594"
+				 x-component="div"
+				 x-id="App_594"
+				 x-dynamic="false">
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="595"
+					 x-component="Card"
+					 x-id="App_595"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="596"
+						 x-component="CardHeader"
+						 x-id="App_596"
+						 x-dynamic="true">
+						<div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4"
+							 x-file-name="App"
+							 x-line-number="597"
+							 x-component="div"
+							 x-id="App_597"
+							 x-dynamic="false">
+							<svg xmlns="http://www.w3.org/2000/svg"
+								 width="24"
+								 height="24"
+								 viewBox="0 0 24 24"
+								 fill="none"
+								 stroke="currentColor"
+								 stroke-width="2"
+								 stroke-linecap="round"
+								 stroke-linejoin="round"
+								 class="lucide lucide-camera w-6 h-6 text-purple-600"
+								 aria-hidden="true"
+								 x-file-name="App"
+								 x-line-number="598"
+								 x-component="Camera"
+								 x-id="App_598"
+								 x-dynamic="false">
+								<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+								<circle cx="12" cy="13" r="3"></circle>
+							</svg>
+						</div>
+						<div class="font-semibold leading-none tracking-tight"
+							 x-file-name="App"
+							 x-line-number="600"
+							 x-component="CardTitle"
+							 x-id="App_600"
+							 x-dynamic="false">
+							Professional Photography
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="601"
+							 x-component="CardDescription"
+							 x-id="App_601"
+							 x-dynamic="false">
+							High-quality 360° images captured by certified Google Street View photographers.
+						</div>
+					</div>
+				</div>
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="604"
+					 x-component="Card"
+					 x-id="App_604"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="605"
+						 x-component="CardHeader"
+						 x-id="App_605"
+						 x-dynamic="true">
+						<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
+							 x-file-name="App"
+							 x-line-number="606"
+							 x-component="div"
+							 x-id="App_606"
+							 x-dynamic="false">
+							<svg xmlns="http://www.w3.org/2000/svg"
+								 width="24"
+								 height="24"
+								 viewBox="0 0 24 24"
+								 fill="none"
+								 stroke="currentColor"
+								 stroke-width="2"
+								 stroke-linecap="round"
+								 stroke-linejoin="round"
+								 class="lucide lucide-server w-6 h-6 text-blue-600"
+								 aria-hidden="true"
+								 x-file-name="App"
+								 x-line-number="607"
+								 x-component="Server"
+								 x-id="App_607"
+								 x-dynamic="false">
+								<rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect>
+								<rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect>
+								<line x1="6" x2="6.01" y1="6" y2="6"></line>
+								<line x1="6" x2="6.01" y1="18" y2="18"></line>
+							</svg>
+						</div>
+						<div class="font-semibold leading-none tracking-tight"
+							 x-file-name="App"
+							 x-line-number="609"
+							 x-component="CardTitle"
+							 x-id="App_609"
+							 x-dynamic="false">
+							Google Maps Integration
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="610"
+							 x-component="CardDescription"
+							 x-id="App_610"
+							 x-dynamic="false">
+							Your tour appears directly in Google Maps and Google Search results.
+						</div>
+					</div>
+				</div>
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="613"
+					 x-component="Card"
+					 x-id="App_613"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="614"
+						 x-component="CardHeader"
+						 x-id="App_614"
+						 x-dynamic="true">
+						<div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4"
+							 x-file-name="App"
+							 x-line-number="615"
+							 x-component="div"
+							 x-id="App_615"
+							 x-dynamic="false">
+							<svg xmlns="http://www.w3.org/2000/svg"
+								 width="24"
+								 height="24"
+								 viewBox="0 0 24 24"
+								 fill="none"
+								 stroke="currentColor"
+								 stroke-width="2"
+								 stroke-linecap="round"
+								 stroke-linejoin="round"
+								 class="lucide lucide-code w-6 h-6 text-green-600"
+								 aria-hidden="true"
+								 x-file-name="App"
+								 x-line-number="616"
+								 x-component="Code"
+								 x-id="App_616"
+								 x-dynamic="false">
+								<polyline points="16 18 22 12 16 6"></polyline>
+								<polyline points="8 6 2 12 8 18"></polyline>
+							</svg>
+						</div>
+						<div class="font-semibold leading-none tracking-tight"
+							 x-file-name="App"
+							 x-line-number="618"
+							 x-component="CardTitle"
+							 x-id="App_618"
+							 x-dynamic="false">
+							Website Embedding
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="619"
+							 x-component="CardDescription"
+							 x-id="App_619"
+							 x-dynamic="false">
+							Easily embed your virtual tour on your website to engage visitors.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="py-20 bg-gray-50"
+			 data-testid="virtual-tours-samples"
+			 x-file-name="App"
+			 x-line-number="627"
+			 x-component="section"
+			 x-id="App_627"
+			 x-dynamic="false">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+			 x-file-name="App"
+			 x-line-number="628"
+			 x-component="div"
+			 x-id="App_628"
+			 x-dynamic="false">
+			<div class="text-center mb-12"
+				 x-file-name="App"
+				 x-line-number="629"
+				 x-component="div"
+				 x-id="App_629"
+				 x-dynamic="false">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4"
+					x-file-name="App"
+					x-line-number="630"
+					x-component="h2"
+					x-id="App_630"
+					x-dynamic="false">
+					Sample Virtual Tours
+				</h2>
+				<p class="text-xl text-gray-600"
+				   x-file-name="App"
+				   x-line-number="631"
+				   x-component="p"
+				   x-id="App_631"
+				   x-dynamic="false">
+					Experience the immersive power of 360° virtual tours
+				</p>
+			</div>
+			<div class="space-y-12"
+				 x-file-name="App"
+				 x-line-number="635"
+				 x-component="div"
+				 x-id="App_635"
+				 x-dynamic="false">
+				
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="664"
+					 x-component="Card"
+					 x-id="App_664"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="665"
+						 x-component="CardHeader"
+						 x-id="App_665"
+						 x-dynamic="true">
+						<div class="font-semibold leading-none tracking-tight"
+							 x-file-name="App"
+							 x-line-number="666"
+							 x-component="CardTitle"
+							 x-id="App_666"
+							 x-dynamic="false">
+							Hotel Virtual Tour
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="667"
+							 x-component="CardDescription"
+							 x-id="App_667"
+							 x-dynamic="false">
+							Example of a hotel interior 360° tour showcasing ambiance
+						</div>
+					</div>
+					<div class="p-6 pt-0"
+						 x-file-name="App"
+						 x-line-number="669"
+						 x-component="CardContent"
+						 x-id="App_669"
+						 x-dynamic="true"
+						 x-excluded="true">
+						<div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden"
+							 data-testid="sample-tour-2"
+							 x-file-name="App"
+							 x-line-number="670"
+							 x-component="div"
+							 x-id="App_670"
+							 x-dynamic="false">
+							<iframe src="https://www.google.com/maps/embed?pb=!4v1772531622073!6m8!1m7!1sCAoSLEFGMVFpcFBVSzFDUm1UY1paa0RMYlZZNVVLY0ZONXpCZzAwYjNFV0tQaG9u!2m2!1d20.72078360376002!2d77.00485570653782!3f14.75!4f-4.049999999999997!5f0.4000000000000002"
+									width="100%"
+									height="100%"
+									allowfullscreen=""
+									loading="lazy"
+									referrerpolicy="no-referrer-when-downgrade"
+									title="Hotel Virtual Tour"
+									x-file-name="App"
+									x-line-number="671"
+									x-component="iframe"
+									x-id="App_671"
+									x-dynamic="false"
+									style="border: 0px"></iframe>
+						</div>
+					</div>
+				</div>
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="637"
+					 x-component="Card"
+					 x-id="App_637"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="638"
+						 x-component="CardHeader"
+						 x-id="App_638"
+						 x-dynamic="true">
+						<div class="font-semibold leading-none tracking-tight"
+							 x-file-name="App"
+							 x-line-number="639"
+							 x-component="CardTitle"
+							 x-id="App_639"
+							 x-dynamic="false">
+							School Virtual Tour
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="640"
+							 x-component="CardDescription"
+							 x-id="App_640"
+							 x-dynamic="false">
+							Example of a School 360° tour showing class rooms and library
+						</div>
+					</div>
+					<div class="p-6 pt-0"
+						 x-file-name="App"
+						 x-line-number="642"
+						 x-component="CardContent"
+						 x-id="App_642"
+						 x-dynamic="true"
+						 x-excluded="true">
+						<div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden"
+							 data-testid="sample-tour-1"
+							 x-file-name="App"
+							 x-line-number="643"
+							 x-component="div"
+							 x-id="App_643"
+							 x-dynamic="false">
+							<iframe src="https://www.google.com/maps/embed?pb=!4v1772531410266!6m8!1m7!1sCAoSLEFGMVFpcE5YT3I5Z2RvNkY1S2JXSEY4b1VaQVBzTXdFNzktWnJKRTROMVY3!2m2!1d20.6829328625763!2d77.0153947319667!3f318.1!4f-12.760000000000005!5f0.7820865974627469"
+									width="100%"
+									height="100%"
+									allowfullscreen=""
+									loading="lazy"
+									referrerpolicy="no-referrer-when-downgrade"
+									title="School Virtual Tour"
+									x-file-name="App"
+									x-line-number="644"
+									x-component="iframe"
+									x-id="App_644"
+									x-dynamic="false"
+									style="border: 0px"></iframe>
+
+						</div>
+					</div>
+				</div>
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="691"
+					 x-component="Card"
+					 x-id="App_691"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="692"
+						 x-component="CardHeader"
+						 x-id="App_692"
+						 x-dynamic="true">
+						<div class="font-semibold leading-none tracking-tight"
+							 x-file-name="App"
+							 x-line-number="693"
+							 x-component="CardTitle"
+							 x-id="App_693"
+							 x-dynamic="false">
+							Bakery Shop Virtual Tour
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="694"
+							 x-component="CardDescription"
+							 x-id="App_694"
+							 x-dynamic="false">
+							Bakery shop 360° tour
+						</div>
+					</div>
+					<div class="p-6 pt-0"
+						 x-file-name="App"
+						 x-line-number="696"
+						 x-component="CardContent"
+						 x-id="App_696"
+						 x-dynamic="true"
+						 x-excluded="true">
+						<div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden"
+							 data-testid="sample-tour-3"
+							 x-file-name="App"
+							 x-line-number="697"
+							 x-component="div"
+							 x-id="App_697"
+							 x-dynamic="false">
+							<iframe src="https://www.google.com/maps/embed?pb=!4v1772531991058!6m8!1m7!1sCAoSLEFGMVFpcFB6emRXX2EwLWtmdllJREhtYXh4ZmxITTRreVBPUEk3UUVlVF9V!2m2!1d20.71383093264686!2d77.01394849966184!3f318.9412876340007!4f-6.824466194830961!5f0.7820865974627469"
+									width="100%"
+									height="100%"
+									allowfullscreen=""
+									loading="lazy"
+									referrerpolicy="no-referrer-when-downgrade"
+									title="Bakery Shop Virtual Tour"
+									x-file-name="App"
+									x-line-number="698"
+									x-component="iframe"
+									x-id="App_698"
+									x-dynamic="false"
+									style="border: 0px"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="py-20 bg-white"
+			 data-testid="virtual-tours-benefits"
+			 x-file-name="App"
+			 x-line-number="716"
+			 x-component="section"
+			 x-id="App_716"
+			 x-dynamic="false">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+			 x-file-name="App"
+			 x-line-number="717"
+			 x-component="div"
+			 x-id="App_717"
+			 x-dynamic="false">
+			<div class="text-center mb-12"
+				 x-file-name="App"
+				 x-line-number="718"
+				 x-component="div"
+				 x-id="App_718"
+				 x-dynamic="false">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4"
+					x-file-name="App"
+					x-line-number="719"
+					x-component="h2"
+					x-id="App_719"
+					x-dynamic="false">
+					Benefits of Virtual Tours
+				</h2>
+				<p class="text-xl text-gray-600"
+				   x-file-name="App"
+				   x-line-number="720"
+				   x-component="p"
+				   x-id="App_720"
+				   x-dynamic="false">
+					Why your business needs a Google 360° virtual tour
+				</p>
+			</div>
+			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+				 x-file-name="App"
+				 x-line-number="723"
+				 x-component="div"
+				 x-id="App_723"
+				 x-dynamic="false">
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="724"
+					 x-component="Card"
+					 x-id="App_724"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="725"
+						 x-component="CardHeader"
+						 x-id="App_725"
+						 x-dynamic="true">
+						<div class="font-semibold leading-none tracking-tight flex items-center"
+							 x-file-name="App"
+							 x-line-number="726"
+							 x-component="CardTitle"
+							 x-id="App_726"
+							 x-dynamic="false">
+							<div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3"
+								 x-file-name="App"
+								 x-line-number="727"
+								 x-component="div"
+								 x-id="App_727"
+								 x-dynamic="false">
+								<span class="text-green-600 font-bold"
+									  x-file-name="App"
+									  x-line-number="728"
+									  x-component="span"
+									  x-id="App_728"
+									  x-dynamic="false">1</span>
+							</div>
+							Increase Visibility
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="732"
+							 x-component="CardDescription"
+							 x-id="App_732"
+							 x-dynamic="false">
+							Boost your online presence on Google Search and Maps, making it easier for customers
+							to find you.
+						</div>
+					</div>
+				</div>
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="735"
+					 x-component="Card"
+					 x-id="App_735"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="736"
+						 x-component="CardHeader"
+						 x-id="App_736"
+						 x-dynamic="true">
+						<div class="font-semibold leading-none tracking-tight flex items-center"
+							 x-file-name="App"
+							 x-line-number="737"
+							 x-component="CardTitle"
+							 x-id="App_737"
+							 x-dynamic="false">
+							<div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3"
+								 x-file-name="App"
+								 x-line-number="738"
+								 x-component="div"
+								 x-id="App_738"
+								 x-dynamic="false">
+								<span class="text-blue-600 font-bold"
+									  x-file-name="App"
+									  x-line-number="739"
+									  x-component="span"
+									  x-id="App_739"
+									  x-dynamic="false">2</span>
+							</div>
+							Build Trust
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="743"
+							 x-component="CardDescription"
+							 x-id="App_743"
+							 x-dynamic="false">
+							Let customers see your space before visiting, building confidence and transparency.
+						</div>
+					</div>
+				</div>
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="746"
+					 x-component="Card"
+					 x-id="App_746"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="747"
+						 x-component="CardHeader"
+						 x-id="App_747"
+						 x-dynamic="true">
+						<div class="font-semibold leading-none tracking-tight flex items-center"
+							 x-file-name="App"
+							 x-line-number="748"
+							 x-component="CardTitle"
+							 x-id="App_748"
+							 x-dynamic="false">
+							<div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3"
+								 x-file-name="App"
+								 x-line-number="749"
+								 x-component="div"
+								 x-id="App_749"
+								 x-dynamic="false">
+								<span class="text-purple-600 font-bold"
+									  x-file-name="App"
+									  x-line-number="750"
+									  x-component="span"
+									  x-id="App_750"
+									  x-dynamic="false">3</span>
+							</div>
+							Drive Engagement
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="754"
+							 x-component="CardDescription"
+							 x-id="App_754"
+							 x-dynamic="false">
+							Interactive tours keep visitors engaged 5x longer than static images.
+						</div>
+					</div>
+				</div>
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="757"
+					 x-component="Card"
+					 x-id="App_757"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="758"
+						 x-component="CardHeader"
+						 x-id="App_758"
+						 x-dynamic="true">
+						<div class="font-semibold leading-none tracking-tight flex items-center"
+							 x-file-name="App"
+							 x-line-number="759"
+							 x-component="CardTitle"
+							 x-id="App_759"
+							 x-dynamic="false">
+							<div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3"
+								 x-file-name="App"
+								 x-line-number="760"
+								 x-component="div"
+								 x-id="App_760"
+								 x-dynamic="false">
+								<span class="text-orange-600 font-bold"
+									  x-file-name="App"
+									  x-line-number="761"
+									  x-component="span"
+									  x-id="App_761"
+									  x-dynamic="false">4</span>
+							</div>
+							Increase Bookings
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="765"
+							 x-component="CardDescription"
+							 x-id="App_765"
+							 x-dynamic="false">
+							Businesses with virtual tours receive 2x more interest than those without.
+						</div>
+					</div>
+				</div>
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="768"
+					 x-component="Card"
+					 x-id="App_768"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="769"
+						 x-component="CardHeader"
+						 x-id="App_769"
+						 x-dynamic="true">
+						<div class="font-semibold leading-none tracking-tight flex items-center"
+							 x-file-name="App"
+							 x-line-number="770"
+							 x-component="CardTitle"
+							 x-id="App_770"
+							 x-dynamic="false">
+							<div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3"
+								 x-file-name="App"
+								 x-line-number="771"
+								 x-component="div"
+								 x-id="App_771"
+								 x-dynamic="false">
+								<span class="text-red-600 font-bold"
+									  x-file-name="App"
+									  x-line-number="772"
+									  x-component="span"
+									  x-id="App_772"
+									  x-dynamic="false">5</span>
+							</div>
+							24/7 Showcase
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="776"
+							 x-component="CardDescription"
+							 x-id="App_776"
+							 x-dynamic="false">
+							Your business is open for virtual visits anytime, anywhere in the world.
+						</div>
+					</div>
+				</div>
+				<div class="rounded-xl border bg-card text-card-foreground shadow"
+					 x-file-name="App"
+					 x-line-number="779"
+					 x-component="Card"
+					 x-id="App_779"
+					 x-dynamic="true">
+					<div class="flex flex-col space-y-1.5 p-6"
+						 x-file-name="App"
+						 x-line-number="780"
+						 x-component="CardHeader"
+						 x-id="App_780"
+						 x-dynamic="true">
+						<div class="font-semibold leading-none tracking-tight flex items-center"
+							 x-file-name="App"
+							 x-line-number="781"
+							 x-component="CardTitle"
+							 x-id="App_781"
+							 x-dynamic="false">
+							<div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-3"
+								 x-file-name="App"
+								 x-line-number="782"
+								 x-component="div"
+								 x-id="App_782"
+								 x-dynamic="false">
+								<span class="text-indigo-600 font-bold"
+									  x-file-name="App"
+									  x-line-number="783"
+									  x-component="span"
+									  x-id="App_783"
+									  x-dynamic="false">6</span>
+							</div>
+							Competitive Edge
+						</div>
+						<div class="text-sm text-muted-foreground"
+							 x-file-name="App"
+							 x-line-number="787"
+							 x-component="CardDescription"
+							 x-id="App_787"
+							 x-dynamic="false">
+							Stand out from competitors who only have static photos or no imagery at all.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="py-20 bg-gray-50"
+			 x-file-name="App"
+			 x-line-number="795"
+			 x-component="section"
+			 x-id="App_795"
+			 x-dynamic="false">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+			 x-file-name="App"
+			 x-line-number="796"
+			 x-component="div"
+			 x-id="App_796"
+			 x-dynamic="false">
+			<div class="text-center mb-12"
+				 x-file-name="App"
+				 x-line-number="797"
+				 x-component="div"
+				 x-id="App_797"
+				 x-dynamic="false">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4"
+					x-file-name="App"
+					x-line-number="798"
+					x-component="h2"
+					x-id="App_798"
+					x-dynamic="false">
+					Industries We Serve
+				</h2>
+				<p class="text-xl text-gray-600"
+				   x-file-name="App"
+				   x-line-number="799"
+				   x-component="p"
+				   x-id="App_799"
+				   x-dynamic="false">
+					Virtual tours for every business type
+				</p>
+			</div>
+			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+				 x-file-name="App"
+				 x-line-number="802"
+				 x-component="div"
+				 x-id="App_802"
+				 x-dynamic="false">
+				<span data-ve-dynamic="true" x-excluded="true" style="display: contents">
+					<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
+						 x-file-name="App"
+						 x-line-number="804"
+						 x-component="div"
+						 x-id="App_804"
+						 x-dynamic="true"
+						 x-source-type="external"
+						 x-source-editable="false"
+						 x-array-item-param="industry">
+						<div class="text-lg font-semibold text-gray-800"
+							 x-file-name="App"
+							 x-line-number="805"
+							 x-component="div"
+							 x-id="App_805"
+							 x-dynamic="true"
+							 x-source-type="external"
+							 x-source-editable="false"
+							 x-array-item-param="industry">
+							<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Restaurants &amp; Cafes</span>
+						</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
+						 x-file-name="App"
+						 x-line-number="804"
+						 x-component="div"
+						 x-id="App_804"
+						 x-dynamic="true"
+						 x-source-type="external"
+						 x-source-editable="false"
+						 x-array-item-param="industry">
+						<div class="text-lg font-semibold text-gray-800"
+							 x-file-name="App"
+							 x-line-number="805"
+							 x-component="div"
+							 x-id="App_805"
+							 x-dynamic="true"
+							 x-source-type="external"
+							 x-source-editable="false"
+							 x-array-item-param="industry">
+							<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Retail Stores</span>
+						</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
+						 x-file-name="App"
+						 x-line-number="804"
+						 x-component="div"
+						 x-id="App_804"
+						 x-dynamic="true"
+						 x-source-type="external"
+						 x-source-editable="false"
+						 x-array-item-param="industry">
+						<div class="text-lg font-semibold text-gray-800"
+							 x-file-name="App"
+							 x-line-number="805"
+							 x-component="div"
+							 x-id="App_805"
+							 x-dynamic="true"
+							 x-source-type="external"
+							 x-source-editable="false"
+							 x-array-item-param="industry">
+							<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Hotels &amp; Resorts</span>
+						</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
+						 x-file-name="App"
+						 x-line-number="804"
+						 x-component="div"
+						 x-id="App_804"
+						 x-dynamic="true"
+						 x-source-type="external"
+						 x-source-editable="false"
+						 x-array-item-param="industry">
+						<div class="text-lg font-semibold text-gray-800"
+							 x-file-name="App"
+							 x-line-number="805"
+							 x-component="div"
+							 x-id="App_805"
+							 x-dynamic="true"
+							 x-source-type="external"
+							 x-source-editable="false"
+							 x-array-item-param="industry">
+							<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Gyms &amp; Fitness Centers</span>
+						</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
+						 x-file-name="App"
+						 x-line-number="804"
+						 x-component="div"
+						 x-id="App_804"
+						 x-dynamic="true"
+						 x-source-type="external"
+						 x-source-editable="false"
+						 x-array-item-param="industry">
+						<div class="text-lg font-semibold text-gray-800"
+							 x-file-name="App"
+							 x-line-number="805"
+							 x-component="div"
+							 x-id="App_805"
+							 x-dynamic="true"
+							 x-source-type="external"
+							 x-source-editable="false"
+							 x-array-item-param="industry">
+							<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Real Estate</span>
+						</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
+						 x-file-name="App"
+						 x-line-number="804"
+						 x-component="div"
+						 x-id="App_804"
+						 x-dynamic="true"
+						 x-source-type="external"
+						 x-source-editable="false"
+						 x-array-item-param="industry">
+						<div class="text-lg font-semibold text-gray-800"
+							 x-file-name="App"
+							 x-line-number="805"
+							 x-component="div"
+							 x-id="App_805"
+							 x-dynamic="true"
+							 x-source-type="external"
+							 x-source-editable="false"
+							 x-array-item-param="industry">
+							<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Healthcare Facilities</span>
+						</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
+						 x-file-name="App"
+						 x-line-number="804"
+						 x-component="div"
+						 x-id="App_804"
+						 x-dynamic="true"
+						 x-source-type="external"
+						 x-source-editable="false"
+						 x-array-item-param="industry">
+						<div class="text-lg font-semibold text-gray-800"
+							 x-file-name="App"
+							 x-line-number="805"
+							 x-component="div"
+							 x-id="App_805"
+							 x-dynamic="true"
+							 x-source-type="external"
+							 x-source-editable="false"
+							 x-array-item-param="industry">
+							<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Educational Institutions</span>
+						</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
+						 x-file-name="App"
+						 x-line-number="804"
+						 x-component="div"
+						 x-id="App_804"
+						 x-dynamic="true"
+						 x-source-type="external"
+						 x-source-editable="false"
+						 x-array-item-param="industry">
+						<div class="text-lg font-semibold text-gray-800"
+							 x-file-name="App"
+							 x-line-number="805"
+							 x-component="div"
+							 x-id="App_805"
+							 x-dynamic="true"
+							 x-source-type="external"
+							 x-source-editable="false"
+							 x-array-item-param="industry">
+							<span data-ve-dynamic="true" x-excluded="true" style="display: contents">Event Venues</span>
+						</div>
+					</div>
+				</span>
+			</div>
+		</div>
+	</section>
+	<section class="py-20 bg-gradient-to-br from-purple-600 to-blue-600 text-white"
+			 x-file-name="App"
+			 x-line-number="813"
+			 x-component="section"
+			 x-id="App_813"
+			 x-dynamic="false">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+			 x-file-name="App"
+			 x-line-number="814"
+			 x-component="div"
+			 x-id="App_814"
+			 x-dynamic="false">
+			<h2 class="text-3xl md:text-4xl font-bold mb-4"
+				x-file-name="App"
+				x-line-number="815"
+				x-component="h2"
+				x-id="App_815"
+				x-dynamic="false">
+				Ready to Showcase Your Business?
+			</h2>
+			<p class="text-xl mb-8 text-blue-100"
+			   x-file-name="App"
+			   x-line-number="816"
+			   x-component="p"
+			   x-id="App_816"
+			   x-dynamic="false">
+				Get a professional Google 360° virtual tour and stand out from the competition. Contact us today
+				for a free consultation and quote.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center"
+				 x-file-name="App"
+				 x-line-number="819"
+				 x-component="div"
+				 x-id="App_819"
+				 x-dynamic="false">
+				<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-10 rounded-md px-8 bg-white text-purple-600 hover:bg-blue-50"
+						x-file-name="App"
+						x-line-number="820"
+						x-component="Button"
+						x-id="App_820"
+						x-dynamic="false"
+						data-testid="virtual-tours-contact-cta">
+					Get a Free Quote
+				</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border shadow-sm hover:text-accent-foreground h-10 rounded-md px-8 border-white text-white hover:bg-white/10"
+								 x-file-name="App"
+								 x-line-number="823"
+								 x-component="Button"
+								 x-id="App_823"
+								 x-dynamic="false"
+								 data-testid="virtual-tours-call-cta">
+					Call Us: +1 (555) 123-4567
+				</button>
+			</div>
+		</div>
+	</section>
+	<section class="py-20 bg-white"
+			 x-file-name="App"
+			 x-line-number="831"
+			 x-component="section"
+			 x-id="App_831"
+			 x-dynamic="false">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+			 x-file-name="App"
+			 x-line-number="832"
+			 x-component="div"
+			 x-id="App_832"
+			 x-dynamic="false">
+			<div class="text-center mb-12"
+				 x-file-name="App"
+				 x-line-number="833"
+				 x-component="div"
+				 x-id="App_833"
+				 x-dynamic="false">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4"
+					x-file-name="App"
+					x-line-number="834"
+					x-component="h2"
+					x-id="App_834"
+					x-dynamic="false">
+					How It Works
+				</h2>
+				<p class="text-xl text-gray-600"
+				   x-file-name="App"
+				   x-line-number="835"
+				   x-component="p"
+				   x-id="App_835"
+				   x-dynamic="false">
+					Simple process to get your virtual tour
+				</p>
+			</div>
+			<div class="grid md:grid-cols-4 gap-8"
+				 x-file-name="App"
+				 x-line-number="838"
+				 x-component="div"
+				 x-id="App_838"
+				 x-dynamic="false">
+				<div class="text-center"
+					 x-file-name="App"
+					 x-line-number="839"
+					 x-component="div"
+					 x-id="App_839"
+					 x-dynamic="false">
+					<div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
+						 x-file-name="App"
+						 x-line-number="840"
+						 x-component="div"
+						 x-id="App_840"
+						 x-dynamic="false">
+						<span class="text-2xl font-bold text-purple-600"
+							  x-file-name="App"
+							  x-line-number="841"
+							  x-component="span"
+							  x-id="App_841"
+							  x-dynamic="false">1</span>
+					</div>
+					<h3 class="text-lg font-semibold mb-2"
+						x-file-name="App"
+						x-line-number="843"
+						x-component="h3"
+						x-id="App_843"
+						x-dynamic="false">
+						Contact Us
+					</h3>
+					<p class="text-gray-600"
+					   x-file-name="App"
+					   x-line-number="844"
+					   x-component="p"
+					   x-id="App_844"
+					   x-dynamic="false">
+						Reach out for a free consultation and quote
+					</p>
+				</div>
+				<div class="text-center"
+					 x-file-name="App"
+					 x-line-number="846"
+					 x-component="div"
+					 x-id="App_846"
+					 x-dynamic="false">
+					<div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+						 x-file-name="App"
+						 x-line-number="847"
+						 x-component="div"
+						 x-id="App_847"
+						 x-dynamic="false">
+						<span class="text-2xl font-bold text-blue-600"
+							  x-file-name="App"
+							  x-line-number="848"
+							  x-component="span"
+							  x-id="App_848"
+							  x-dynamic="false">2</span>
+					</div>
+					<h3 class="text-lg font-semibold mb-2"
+						x-file-name="App"
+						x-line-number="850"
+						x-component="h3"
+						x-id="App_850"
+						x-dynamic="false">
+						Schedule Shoot
+					</h3>
+					<p class="text-gray-600"
+					   x-file-name="App"
+					   x-line-number="851"
+					   x-component="p"
+					   x-id="App_851"
+					   x-dynamic="false">
+						We arrange a convenient time for photography
+					</p>
+				</div>
+				<div class="text-center"
+					 x-file-name="App"
+					 x-line-number="853"
+					 x-component="div"
+					 x-id="App_853"
+					 x-dynamic="false">
+					<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+						 x-file-name="App"
+						 x-line-number="854"
+						 x-component="div"
+						 x-id="App_854"
+						 x-dynamic="false">
+						<span class="text-2xl font-bold text-green-600"
+							  x-file-name="App"
+							  x-line-number="855"
+							  x-component="span"
+							  x-id="App_855"
+							  x-dynamic="false">3</span>
+					</div>
+					<h3 class="text-lg font-semibold mb-2"
+						x-file-name="App"
+						x-line-number="857"
+						x-component="h3"
+						x-id="App_857"
+						x-dynamic="false">
+						Professional Capture
+					</h3>
+					<p class="text-gray-600"
+					   x-file-name="App"
+					   x-line-number="858"
+					   x-component="p"
+					   x-id="App_858"
+					   x-dynamic="false">
+						Our certified photographers capture your space
+					</p>
+				</div>
+				<div class="text-center"
+					 x-file-name="App"
+					 x-line-number="860"
+					 x-component="div"
+					 x-id="App_860"
+					 x-dynamic="false">
+					<div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"
+						 x-file-name="App"
+						 x-line-number="861"
+						 x-component="div"
+						 x-id="App_861"
+						 x-dynamic="false">
+						<span class="text-2xl font-bold text-orange-600"
+							  x-file-name="App"
+							  x-line-number="862"
+							  x-component="span"
+							  x-id="App_862"
+							  x-dynamic="false">4</span>
+					</div>
+					<h3 class="text-lg font-semibold mb-2"
+						x-file-name="App"
+						x-line-number="864"
+						x-component="h3"
+						x-id="App_864"
+						x-dynamic="false">
+						Go Live
+					</h3>
+					<p class="text-gray-600"
+					   x-file-name="App"
+					   x-line-number="865"
+					   x-component="p"
+					   x-id="App_865"
+					   x-dynamic="false">
+						Your tour goes live on Google and your website
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
 </div>

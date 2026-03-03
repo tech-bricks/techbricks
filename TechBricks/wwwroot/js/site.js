@@ -18,6 +18,9 @@ $(document).ready(function () {
         if (targetId === 'tech-bricksit solutions') {
             window.location = '/home';
         }
+        if (window.location.pathname === '/360tour') {
+            window.location = '/home';
+        }
         var $targetElement = $('#' + targetId);
 
         if ($targetElement.length) {
