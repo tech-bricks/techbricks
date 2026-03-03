@@ -33,6 +33,55 @@ $(document).ready(function () {
         }
     });
 
+    $('#btn-contact').on('click', function (e) {
+        e.preventDefault();
+
+        // 1. Get the token from the hidden input field
+        const token = $('input[name="__RequestVerificationToken"]').val();
+
+        const formData = {
+            Name: $('#name').val(),
+            Email: $('#email').val(),
+            Subject: $('#service').val(),
+            Message: $('#message').val()
+        };
+
+        // 2. Validate basic length for the 'Message' (to match your C# MinLength)
+        if (formData.Message.length < 10) {
+            alert("The message must be at least 10 characters long.");
+            return;
+        }
+
+        const $btn = $(this);
+        $btn.prop('disabled', true).text('Sending...');
+
+        // 3. Send the AJAX request
+        $.ajax({
+            url: '/home/contact',
+            type: 'POST',
+            data: formData,
+            headers: {
+                "RequestVerificationToken": token // Added security header
+            },
+            success: function (response) {
+                alert("Message sent! We'll get back to you soon.");
+                $('form')[0].reset();
+            },
+            error: function (xhr) {
+                // If validation fails on the server (400), check responseJSON
+                if (xhr.status === 400 && xhr.responseJSON) {
+                    console.log("Validation errors:", xhr.responseJSON);
+                    alert("Please check the form for errors.");
+                } else {
+                    alert("An error occurred. Status: " + xhr.status);
+                }
+            },
+            complete: function () {
+                $btn.prop('disabled', false).text('Send Message');
+            }
+        });
+    });
+
     // 2. Simple Scroll-based Animation (Optional)
     // You can use this space for more advanced interactions, like toggling a fixed header class.
 
