@@ -31,6 +31,7 @@ $(document).ready(function () {
                 scrollTop: $targetElement.offset().top - headerHeight
             }, 800); // Duration in milliseconds
         }
+        $('#mobile-menu').hide().removeClass('translate-x-0').addClass('translate-x-full');
     });
 
     $('#btn-contact').on('click', function (e) {
