@@ -22,34 +22,16 @@ namespace TechBricks.Controllers
             return View();
         }
 
-        public IActionResult About()
+        [Route("360tour")]
+        public IActionResult VirtualTours()
         {
             // MVC looks for a view at: /Views/Home/About.cshtml
             return View();
-        }
-
-        public IActionResult Services()
-        {
-            // MVC looks for a view at: /Views/Home/About.cshtml
-            return View();
-        }
-
-        public IActionResult Solution()
-        {
-            // MVC looks for a view at: /Views/Home/About.cshtml
-            return View();
-        }
-
-
-        [HttpGet]
-        public IActionResult Contact()
-        {
-            return View(new ContactFormModel());
         }
 
         // POST: Handles the form submission
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [Route("home/contact")]
         public async Task<IActionResult> Contact(ContactFormModel model)
         {
             if (ModelState.IsValid)
@@ -78,7 +60,8 @@ namespace TechBricks.Controllers
                 }
             }
 
-            return View(model);
+            // Process your email/database logic here...
+            return Ok(new { message = "Success" });
         }
     }
 }
