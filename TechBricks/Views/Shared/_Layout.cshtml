@@ -8,7 +8,27 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&amp;display=swap" rel="stylesheet">
-	<title>Tech-Bricks</title>
+	<title>@(ViewData["Title"] ?? "Tech-Bricks")</title>
+	<meta name="description" content="@(ViewData["Description"] ?? "Tech-Bricks - Trusted provider of software development, cloud and IT services.")" />
+	<link rel="canonical" href="@(Context?.Request?.Scheme ?? "https")://@(Context?.Request?.Host)@(Context?.Request?.Path)@(Context?.Request?.QueryString)" />
+	<meta property="og:site_name" content="Tech-Bricks" />
+	<meta property="og:title" content="@(ViewData["Title"] ?? "Tech-Bricks")" />
+	<meta property="og:description" content="@(ViewData["Description"] ?? "Tech-Bricks - Trusted provider of software development, cloud and IT services.")" />
+	<meta property="og:url" content="@(Context?.Request?.Scheme ?? "https")://@(Context?.Request?.Host)@(Context?.Request?.Path)@(Context?.Request?.QueryString)" />
+	<meta property="og:image" content="@(ViewData["OgImage"] ?? Url.Content("~/images/logo.jpg"))" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="@(ViewData["Title"] ?? "Tech-Bricks")" />
+	<meta name="twitter:description" content="@(ViewData["Description"] ?? "Tech-Bricks - Trusted provider of software development, cloud and IT services.")" />
+	<meta name="robots" content="@(ViewData["Robots"] ?? "index,follow")" />
+	<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tech-Bricks",
+  "url": "@(Context?.Request?.Scheme ?? "https")://@(Context?.Request?.Host)",
+  "logo": "/images/logo.jpg"
+}
+</script>
 	@* <script type="text/javascript" crossorigin="anonymous" async="" src="https://us-assets.i.posthog.com/static/array.js"></script> *@
 	@* <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script> *@
 	@* <script defer="" src="/static/js/bundle.js"></script> *@
@@ -25,7 +45,7 @@
 							<button class="smooth-scroll flex items-center space-x-3 group cursor-pointer" x-file-name="Header" x-line-number="44" x-component="button" x-id="Header_44" x-dynamic="false">
 								<div class="w-12 h-12 bg-gradient-to-br rounded-xl flex items-center justify-center group-hover:shadow-xl transition-shadow duration-300" x-file-name="Header" x-line-number="48" x-component="div" x-id="Header_48" x-dynamic="false">
 
-									<img style="min-width: 150px !important; margin-left: 70px;" class="text-white font-bold text-xl" x-file-name="Header" x-line-number="49" x-component="span" x-id="Header_49" x-dynamic="false" src="~/images/logo.jpg" />
+                                    <img alt="Tech-Bricks logo" style="min-width: 150px !important; margin-left: 70px;" class="text-white font-bold text-xl" x-file-name="Header" x-line-number="49" x-component="span" x-id="Header_49" x-dynamic="false" src="~/images/logo.jpg" />
 								</div>
 							</button>
 							<nav class="hidden lg:flex items-center space-x-2"
@@ -224,7 +244,7 @@
 							<div class="space-y-6" x-file-name="Footer" x-line-number="38" x-component="div" x-id="Footer_38" x-dynamic="false">
 								<div class="flex items-center space-x-2" x-file-name="Footer" x-line-number="39" x-component="div" x-id="Footer_39" x-dynamic="false">
 									<div class="w-10 h-10 bg-gradient-to-br flex items-center justify-center" x-file-name="Footer" x-line-number="40" x-component="div" x-id="Footer_40" x-dynamic="false">
-										<img src="~/images/logo.jpg" style="min-width: 185px !important; margin-left:145px;" />
+                                        <img alt="Tech-Bricks logo" src="~/images/logo.jpg" style="min-width: 185px !important; margin-left:145px;" />
 									</div>
 									
 								</div>
