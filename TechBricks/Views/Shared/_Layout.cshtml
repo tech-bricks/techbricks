@@ -10,18 +10,18 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&amp;display=swap" rel="stylesheet">
 	<title>@(ViewData["Title"] ?? "Tech-Bricks")</title>
 	<meta name="description" content="@(ViewData["Description"] ?? "Tech-Bricks - Trusted provider of software development, cloud and IT services.")" />
-	<link rel="canonical" href="@(Request?.Scheme ?? "https")://@(Request?.Host.Value)@(Request?.Path)@(Request?.QueryString)" />
+	<link rel="canonical" href="@(ViewContext.HttpContext?.Request?.Scheme ?? "https")://@(ViewContext.HttpContext?.Request?.Host.Value)@(ViewContext.HttpContext?.Request?.Path)@(ViewContext.HttpContext?.Request?.QueryString)" />
 	<meta property="og:site_name" content="Tech-Bricks" />
 	<meta property="og:title" content="@(ViewData["Title"] ?? "Tech-Bricks")" />
 	<meta property="og:description" content="@(ViewData["Description"] ?? "Tech-Bricks - Trusted provider of software development, cloud and IT services.")" />
-	<meta property="og:url" content="@(Request?.Scheme ?? "https")://@(Request?.Host.Value)@(Request?.Path)@(Request?.QueryString)" />
+	<meta property="og:url" content="@(ViewContext.HttpContext?.Request?.Scheme ?? "https")://@(ViewContext.HttpContext?.Request?.Host.Value)@(ViewContext.HttpContext?.Request?.Path)@(ViewContext.HttpContext?.Request?.QueryString)" />
 	<meta property="og:image" content="@(ViewData["OgImage"] ?? Url.Content("~/images/logo.jpg"))" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="@(ViewData["Title"] ?? "Tech-Bricks")" />
 	<meta name="twitter:description" content="@(ViewData["Description"] ?? "Tech-Bricks - Trusted provider of software development, cloud and IT services.")" />
 	<meta name="robots" content="@(ViewData["Robots"] ?? "index,follow")" />
 	@{
-		var orgUrl = $"{(Request?.Scheme ?? "https")}://{(Request?.Host.Value ?? string.Empty)}";
+		var orgUrl = $"{(ViewContext.HttpContext?.Request?.Scheme ?? "https")}://{(ViewContext.HttpContext?.Request?.Host.Value ?? string.Empty)}";
 		var orgJson = $"{{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Tech-Bricks\",\"url\":\"{orgUrl}\",\"logo\":\"/images/logo.jpg\"}}";
 	}
 	<script type="application/ld+json">@Html.Raw(orgJson)</script>
